@@ -5,10 +5,10 @@
     <Home msg="Welcome to Your Vue.js App"/>
     <PizzaWingCombo size="small" lbs="1" price="19.65"/>
     <PizzaWingCombo size="medium" lbs="1" price="23.25"/>
-    <PizzaWingCombo size="large" lbs="1" price="29.95"/>
-    <PizzaWingCombo size="x-large" lbs="1" price="38.49"/>
-    <PizzaWingCombo size="family" lbs="1" price="41.79"/>
-    <PizzaWingCombo size="party" lbs="1" price="54.05"/>
+    <PizzaWingCombo size="large" lbs="1 (1/2)" price="29.95"/>
+    <PizzaWingCombo size="x-large" lbs="2" price="38.49"/>
+    <PizzaWingCombo size="family" lbs="2 (1/2)" price="41.79"/>
+    <PizzaWingCombo size="party" lbs="3" price="54.05"/>
     <Footer/>
   </div>
 </template>
