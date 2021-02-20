@@ -4,10 +4,9 @@
       Martino
     </div>
     <div class="right">
-       <a class="menu-item" href="Home">Home</a>
+      <a class="menu-item" href="Home">Home</a>
       <a class="menu-item" href="Menu">Menu</a>
       <a class="menu-item" href="Order Now">Order Now</a>
-     
     </div>
   </div>
 </template>

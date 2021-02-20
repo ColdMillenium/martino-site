@@ -2,19 +2,30 @@
   <div id="app">
     <Header/>
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Home msg="Welcome to Your Vue.js App"/>
+    <PizzaWingCombo size="small" lbs="1" price="19.65"/>
+    <PizzaWingCombo size="medium" lbs="1" price="23.25"/>
+    <PizzaWingCombo size="large" lbs="1" price="29.95"/>
+    <PizzaWingCombo size="x-large" lbs="1" price="38.49"/>
+    <PizzaWingCombo size="family" lbs="1" price="41.79"/>
+    <PizzaWingCombo size="party" lbs="1" price="54.05"/>
+    <Footer/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from './components/Home.vue'
 import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+import PizzaWingCombo from './components/food/PizzaWingCombo.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    Header
+    Home,
+    Header,
+    Footer,
+    PizzaWingCombo
   }
 }
 </script>
