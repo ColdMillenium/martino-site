@@ -16,6 +16,12 @@
       :meats="['shrimp', 'beef', 'tofu']"
       :prices="[19.99, 25.55, 34.55]"
     />
+     <FoodItem 
+      picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+      dishName= "Test Dish2"
+      desc=  "It's the best test dish you've ever had. There's nothing like it."
+      :prices="[19.99]"
+    />
     woah waoh
     <Footer/>
     

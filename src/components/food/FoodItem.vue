@@ -1,8 +1,5 @@
 <template>
     <div class="container">
-       
-        <!-- {{ prices.length == 1 ? 'SINGLE' : "MULTIsdfad"}}   -->
-         
         <img :src="picUrl" :alt="'picture of ' + dishName + 'meal'">
         <div v-if="prices.length>1" class="meal-text">
             <div><h2 class="dish-name">{{dishName}}</h2></div>
@@ -15,9 +12,14 @@
                 </div>
             </div>
         </div>
-        
-        
-    
+        <div v-else class="meal-text">
+            <div class="meal-header">
+                <h2 class="dish-name">{{dishName}}</h2>
+                <h2 class="single-price">{{prices[0]}}</h2>
+            </div>
+            <div><p class= "description" >{{desc}}</p></div>
+            
+        </div>
     </div>
 </template>
 
@@ -57,14 +59,20 @@ export default {
         padding: 0;
         margin:0;
     }
-    .meal-text *{
+    .meal-text{
         margin-left:0;
         display:flex;
         flex-direction: column;
-        padding: 5px;
+        gap:10px;
+        padding: 10px;
         text-align: left;
         
     }
+    .meal-header{
+        display: flex;
+        justify-content: space-between;
+    }
+    
     .dish-name, .description{
         margin-bottom: 1em;
     }
