@@ -1,14 +1,8 @@
 <template>
   <div id="app">
-    <Header/>
-    <img alt="Vue logo" src="./assets/logo.png">
+   
     <Home msg="Welcome to Your Vue.js App"/>
-    <PizzaWingCombo size="small" lbs="1" price="19.65"/>
-    <PizzaWingCombo size="medium" lbs="1" price="23.25"/>
-    <PizzaWingCombo size="large" lbs="1 (1/2)" price="29.95"/>
-    <PizzaWingCombo size="x-large" lbs="2" price="38.49"/>
-    <PizzaWingCombo size="family" lbs="2 (1/2)" price="41.79"/>
-    <PizzaWingCombo size="party" lbs="3" price="54.05"/>
+    
     <FoodItem 
       picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
       dishName= "Test Dish"
@@ -24,7 +18,7 @@
     />
     woah waoh
     <Footer/>
-    {{ render(h){return h(ViewComponent)}}}
+ 
     {{currentRoute}} bayb
     
   </div>
@@ -32,9 +26,9 @@
 
 <script>
 import Home from './components/Home.vue'
-import Header from './components/Header.vue'
+
 import Footer from './components/Footer.vue'
-import PizzaWingCombo from './components/food/PizzaWingCombo.vue'
+
 import FoodItem from './components/food/FoodItem.vue'
 
 const NotFound = { template: '<p>Page not found</p>' }
@@ -51,9 +45,8 @@ export default {
   name: 'App',
   components: {
     Home,
-    Header,
     Footer,
-    PizzaWingCombo,
+  
     FoodItem,
   },
   data(){
@@ -76,6 +69,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+ 
+}
+body{
+  margin: 0;
+  padding:0;
 }
 </style>

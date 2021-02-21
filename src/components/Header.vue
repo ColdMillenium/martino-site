@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="left">
-      Martino
+      <div class="logo">bitchin</div>
     </div>
     <div class="right">
       <a class="menu-item" href="Home">Home</a>
@@ -23,13 +23,20 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container{
-  margin: auto;
+  position: absolute;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+
 }
 .left{
   margin-left: 0;
   margin:0;
+}
+.logo{
+
+  background:url(../assets/img/martinoLogo.png);
+  width: 100px;
 }
 .right{
   margin-right: 0;
