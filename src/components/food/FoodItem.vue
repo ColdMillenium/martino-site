@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <img :src="picUrl" :alt="'picture of ' + dishName + 'meal'">
+        {{testData}}
         <div v-if="prices.length>1" class="meal-text">
             <div><h2 class="dish-name">{{dishName}}</h2></div>
             <div><p class= "description" >{{desc}}</p></div>
@@ -39,6 +40,11 @@ export default {
             pussy: this.instance.prices.length,
             chicken: 'beach'
         }
+    },
+    computed:{
+        testData(){
+            return this.prices
+        }
     }
 
 }
@@ -64,7 +70,7 @@ export default {
         display:flex;
         flex-direction: column;
         gap:10px;
-        padding: 10px;
+        padding: 20px;
         text-align: left;
         
     }
@@ -77,12 +83,13 @@ export default {
         margin-bottom: 1em;
     }
     .description{
-        
+        font-style: italic;
     }
     .price-options{
         display:flex;
         flex-direction: row;
-        gap: 1em;
+        justify-content:space-between;
+        text-align: center;
     }
     
     .meatItem{

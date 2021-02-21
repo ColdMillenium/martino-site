@@ -24,6 +24,8 @@
     />
     woah waoh
     <Footer/>
+    {{ render(h){return h(ViewComponent)}}}
+    {{currentRoute}} bayb
     
   </div>
 </template>
@@ -35,6 +37,16 @@ import Footer from './components/Footer.vue'
 import PizzaWingCombo from './components/food/PizzaWingCombo.vue'
 import FoodItem from './components/food/FoodItem.vue'
 
+const NotFound = { template: '<p>Page not found</p>' }
+const About = { template: '<p>about page</p>' }
+const Menu = { template: '<p>menu page</p>' }
+
+const routes = {
+  '/': Home,
+  '/about': About,
+  '/menu': Menu
+}
+
 export default {
   name: 'App',
   components: {
@@ -43,6 +55,16 @@ export default {
     Footer,
     PizzaWingCombo,
     FoodItem,
+  },
+  data(){
+    return{
+      currentRoute: window.location.pathname
+    }
+  },
+  computed: {
+    ViewComponent(){
+      return routes[this.currentRoute] || NotFound
+    }
   }
 }
 </script>
