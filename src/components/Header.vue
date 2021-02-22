@@ -2,10 +2,19 @@
   <div class="container">
     <div class="left">
       <img class="logo" src="../assets/img/martinoLogo.png" alt="">
+      <div>
+        178 Dupont Street, Toronto 
+      </div>
+    <div>|</div>
+    <div>416 929 6000</div>
     </div>
     <div class="right">
       <a class="menu-item" href="Home">Home</a>
-      <a class="menu-item" href="Menu">Menu</a>
+      
+        <router-link to="/MENU">
+          <a class="menu-item" href="Menu">MENU</a>
+        </router-link>
+      
       <a class="menu-item" href="Order Now">Order Now</a>
     </div>
   </div>
@@ -24,21 +33,25 @@ export default {
 <style scoped>
 .container{
   position: absolute;
-  width: calc(100vw - 60px);
+  width: calc(100vw );
   top: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1em;
+  background-color: black;
 
 }
 .left{
   margin-left: 0;
   margin:0;
-
+  display:flex;
+  align-items: center;
+  gap: 2em;
+  color: white;
 }
 .logo{
 
- 
   height: 40px;
   
 }

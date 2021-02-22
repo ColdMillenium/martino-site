@@ -20,7 +20,7 @@
 </script>
 <style scoped>
     .card{
-        background-color: rgb(248, 248, 142);
+        background: url(../../assets/img/vintage3.jpg);
         width: 15em;
         height: 20em;
         padding: 2em;

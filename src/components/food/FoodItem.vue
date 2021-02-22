@@ -8,15 +8,15 @@
             
             <div class="price-options">
                 <div class="meatItem" v-for="(meat, index) in meats" :key="meat">
-                    <p>{{meat}}</p>
-                    <h3>{{prices[index]}}</h3>
+                    <div class="meat-name">{{meat}}</div>
+                    <div class="meat-price">${{prices[index]}}</div>
                 </div>
             </div>
         </div>
         <div v-else class="meal-text">
             <div class="meal-header">
                 <h2 class="dish-name">{{dishName}}</h2>
-                <h2 class="single-price">{{prices[0]}}</h2>
+                <h2 class="single-price">${{prices[0]}}</h2>
             </div>
             <div><p class= "description" >{{desc}}</p></div>
             
@@ -61,7 +61,7 @@ export default {
     img{
         text-align:left;
         width: 100%;
-        height: 30%;
+        height: 50%;
     }
     p,h1,h2,h3{
         padding: 0;
@@ -92,12 +92,20 @@ export default {
         display:flex;
         flex-direction: row;
         justify-content:space-between;
-        text-align: center;
+        
     }
     
     .meatItem{
         /* background-color: green; */
         
+        width: 50px;
         margin: 0;
+        font-size: 18px;
+    }
+    .meat-price{
+        font-weight: bold;
+    }
+    .single-price{
+        text-align: right;
     }
 </style>
