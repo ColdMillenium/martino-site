@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <img :src="picUrl" :alt="'picture of ' + dishName + 'meal'">
-        {{testData}}
+       
         <div v-if="prices.length>1" class="meal-text">
             <div><h2 class="dish-name">{{dishName}}</h2></div>
             <div><p class= "description" >{{desc}}</p></div>
@@ -56,6 +56,7 @@ export default {
         width: 20em;
         filter: drop-shadow(0px 19px 20px rgba(0, 0, 0, 0.25));
         
+        
     }
     img{
         text-align:left;
@@ -73,6 +74,7 @@ export default {
         gap:10px;
         padding: 20px;
         text-align: left;
+        width: 100%;
         
     }
     .meal-header{
