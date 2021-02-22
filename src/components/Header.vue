@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="left">
-      <div class="logo">bitchin</div>
+      <img class="logo" src="../assets/img/martinoLogo.png" alt="">
     </div>
     <div class="right">
       <a class="menu-item" href="Home">Home</a>
@@ -24,29 +24,36 @@ export default {
 <style scoped>
 .container{
   position: absolute;
-  width: 100%;
+  width: calc(100vw - 60px);
+  top: 0;
   display: flex;
   justify-content: space-between;
+  padding: 1em;
 
 }
 .left{
   margin-left: 0;
   margin:0;
+
 }
 .logo{
 
-  background:url(../assets/img/martinoLogo.png);
-  width: 100px;
+ 
+  height: 40px;
+  
 }
 .right{
   margin-right: 0;
   margin:0;
   display:flex;
-  gap: 3px;
+  gap: 5em;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: white;
 }
 .menu-item{
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 

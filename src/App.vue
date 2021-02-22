@@ -71,8 +71,19 @@ export default {
   color: #2c3e50;
  
 }
-body{
+h1{
+
+}
+h2{
+ 
+}
+body, h1, h2, h3{
   margin: 0;
   padding:0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+*{
+  box-sizing: border-box;
 }
 </style>

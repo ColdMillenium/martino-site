@@ -52,8 +52,9 @@ export default {
 <style scoped>
     .container{
       
-        background-color: lightgrey;
+        background-color: white;
         width: 20em;
+        filter: drop-shadow(0px 19px 20px rgba(0, 0, 0, 0.25));
         
     }
     img{
