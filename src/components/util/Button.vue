@@ -21,7 +21,7 @@
         background-color:#FF0000;
 ;
         transition: transform .2s; /* Animation */
-        padding: 1em 1.5em;
+        padding: 0.75em 1.5em;
         width: fit-content;
         height: fit-content;
     }
