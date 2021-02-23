@@ -7,6 +7,7 @@
         <router-link to='/Home'>Home</router-link>
         <router-link to='/Menu'>Menu</router-link>
     </nav> -->
+    
     <router-view/>
   </div>
 </template>
@@ -56,5 +57,8 @@ body, h1, h2, h3{
 }
 *{
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 </style>

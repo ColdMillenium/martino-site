@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    
+    <Header/>
     <section class="welcome">
        
       <h1 class= "welcome-title1">Pizza & Asian </h1>
@@ -8,7 +8,7 @@
       <Button class="welcome-btn">Order Now!</Button>
       
     </section>
-    <Header/>
+    
     <section class="about-us">
       <div class="about-us-content">
         <div class="section-title">Our Story</div>
@@ -20,7 +20,9 @@
       </div>
      
     </section>
-    <section class="classic-combo"></section>
+    <section class="classic-combo">
+      <div class="section-title">Classic Combo</div>
+    </section>
     <section class="pizza-wing-combos">
         <div class="section-title">Pizza & Wings Combos</div>
         <div class="pizza-wing-combo-list">
@@ -96,13 +98,25 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 section{
-  margin-bottom: 30px;
+  
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+  background: white;
+  padding: 40px;
+ 
 }
 .section-title{
  
   font-size: 60px;
   font-weight: 600;
-  filter: drop-shadow(0px 19px 20px rgba(0, 0, 0, 0.25));
+  
+  margin-bottom: 40px;
+}
+.welcome-title1,
+.welcome-title2,
+.section-title{
+  text-shadow: 0px 4px 3px rgba(75, 75, 75, 0.4),
+               0px 8px 13px rgba(97, 97, 97, 0.1),
+               0px 18px 23px rgba(143, 143, 143, 0.1);
 }
 .welcome{
   width:100%;
@@ -113,7 +127,7 @@ section{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  filter: drop-shadow(0px 19px 20px rgba(0, 0, 0, 0.25));
+ 
 }
 .welcome-title1{
   font-size: 96px;
@@ -126,18 +140,23 @@ section{
 .welcome-title1,
 .welcome-title2,
 .welcome-btn{
-  filter: drop-shadow(0px 19px 20px rgba(0, 0, 0, 0.25));
+  
   color: white;
+  
 }
 
 .welcome-btn{
   margin: 20px;
   font-size: 24px;
-  font-weight: 200;
+  font-weight: 600;
+
 }
 .about-us{
  display:flex;
  justify-content:center;
+}
+img{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 .about-us-content{
   
@@ -145,14 +164,20 @@ section{
   text-align: center;
 }
 .pizza-wing-combos{
-  margin:auto;
-  width: fit-content;
-  max-width: 1500px;
+ padding: 20px;
+ background: url(../assets/img/woodTable.jpg);
+ background-size: cover;
+}
+.pizza-wing-combos
+.section-title{
+  color:white;
 }
 .pizza-wing-combo-list{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
+  align-items: center;
+  justify-items: center;
   
 }
 .order-info{

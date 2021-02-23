@@ -1,19 +1,36 @@
 <template>
     <div>
+        <Header class="dark" />
         <div class="banner-background">
             
         </div>
-        <Header class="dark" />
-        <section>
+        <div class="filters">
+           
+            <a class="filter-btn" href="#specialty-pizza">Specialty Pizza</a>
+            <a class="filter-btn" href="#create-pizza">Create your own Pizza</a>
+            <a class="filter-btn" href="#wings">Wings</a>
+            <a class="filter-btn" href="#pasta">Pasta</a>
+            <a class="filter-btn" href="#vegetables">vegetables</a>
+            <a class="filter-btn" href="#noodles">noodles</a>
+            <a class="filter-btn" href="#verm">vermecelli</a>
+            <a class="filter-btn" href="#shrimp">shrimp</a>
+            <a class="filter-btn" href="#chicken">chicken</a>
+            <a class="filter-btn" href="#beef">beef</a>
+            <a class="filter-btn" href="#fried-rice">fried rice</a>
+           
+
+        </div>
+        
+        <section id="specialty-pizza">
             <div class="section-title">~ Specialty Pizza ~</div>
         </section>
-        <section>
+        <section id="create-pizza">
             <div class="section-title">Create your own Pizza</div>
         </section>
-        <section>
+        <section  id="wings">
             <div class="section-title">Wings</div>
         </section>
-        <section>
+        <section  id="pasta">
             <div class="section-title">Pasta</div>
             <div class="foodlist">
             <FoodItem
@@ -68,7 +85,7 @@
             
             
         </section>
-        <section>
+        <section id="vegetables">
             <div class="section-title">Vegetables</div>
             <div class="foodlist">
             <FoodItem
@@ -127,7 +144,7 @@
             />
             </div>
         </section>
-        <section>
+        <section  id="noodles">
             <div class="section-title">Noodles</div>
             <div class="foodlist">
             <FoodItem
@@ -182,7 +199,7 @@
             </div>
 
         </section>
-        <section>
+        <section  id="verm">
             <div class="section-title">Vermecelli</div>
             <div class="foodlist">
             <FoodItem
@@ -201,7 +218,7 @@
             />
             </div>
         </section>
-        <section>
+        <section id="shrimp">
             <div class="section-title">Shrimp</div>
             <div class="foodlist">
             <FoodItem
@@ -248,7 +265,7 @@
             />
             </div>
         </section>
-        <section>
+        <section  id="chicken">
             <div class="section-title">Chicken</div>
             <div class="foodlist">
             <FoodItem
@@ -343,7 +360,7 @@
             />
             </div>
         </section>
-        <section>
+        <section  id="beef">
             <div class="section-title">Beef</div>
             <div class="foodlist">
             <FoodItem
@@ -414,7 +431,7 @@
             />
             </div>
         </section>
-        <section>
+        <section  id="fried-rice">
             <div class="section-title">Fried Rice</div>
             <div class="foodlist">
                 
@@ -487,14 +504,31 @@
 <script>
     import Header from './Header.vue'
     import FoodItem from './food/FoodItem.vue';
+   
     export default {
+        name: "Menu",
+        data(){
+            return{
+                filters:{
+                    "all": true,
+                    "pasta": false,
+                    "pizza": false,
+                    "wings": false,
+                }
+            }
+        },
+        // methods:{
+        //     toggleFilter
+        // },
         components:{
             Header, 
             FoodItem,
+           
         }
     }
 </script>
 <style scoped>
+   
     .banner{
         width: 100vw;
         min-height: 150px;
@@ -505,12 +539,33 @@
         width: 100vw;
         height: 200px;
     }
-    .class{
-        background-color: black;
+    .filters{
+        position: sticky;
+        top: 60px;
+        background-color: rgba(231, 231, 231, 0.349);
+        padding:10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        
+
+    }
+    .filter-btn{
+        position: static;
+        padding: 5px 10px;
+        background: white;
+        text-decoration: none;
+        border: 1px solid blue;
+        border-radius: 1em;
+        font-weight:bold;
+        
     }
     section{
-    
-     margin-bottom: 100px; 
+ 
+     padding-top: 100px; 
      width: 100%;
        
     }
@@ -518,14 +573,20 @@
         font-size: 48px;
         margin-bottom: 25px;
         font-weight: 600;
+        text-shadow: 0px 4px 3px rgba(75, 75, 75, 0.4),
+               0px 8px 13px rgba(97, 97, 97, 0.1),
+               0px 18px 23px rgba(143, 143, 143, 0.1);
+
     }
     .foodlist{
         
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr) ) ;
-        gap: 30px;
+        gap: 50px;
         max-width: 1300px; 
         margin:auto;
+        justify-items: center;
+        align-items: center;
     }
     
     
