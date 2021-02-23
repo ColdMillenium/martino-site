@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container fade-in">
         <img :src="picUrl" :alt="'picture of ' + dishName + 'meal'">
        
         <div v-if="prices.length>1" class="meal-text">
@@ -37,8 +37,7 @@ export default {
     },
     data (){
         return {
-            pussy: this.instance.prices.length,
-            chicken: 'beach'
+           
         }
     },
     computed:{
