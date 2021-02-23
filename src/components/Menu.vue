@@ -502,11 +502,36 @@
     </div>
 </template>
 <script>
+  
     import Header from './Header.vue'
     import FoodItem from './food/FoodItem.vue';
-   
+    var fadeInElements = [] // array holding all elements using fade-in class
+    const isElemVisible = (el) =>{
+                var rect = el.getBoundingClientRect();
+                var elemTop = rect.top + 200 // 200 = buffer
+                var elemBottom = rect.bottom
+                return elemTop < window.innerHeight && elemBottom >= 0
+            };
+     const handleScroll = (event) =>{
+                if(event || !event){ //just so it wont error because we dont use event.
+                    console.log("we scrollin dawg");
+                    for(var i = 0; i < fadeInElements.length; i++){
+                        var elem = fadeInElements[i];
+                        if(isElemVisible(elem)){
+                            //grows and turns visible
+                            elem.style.opacity = '1';
+                            elem.style.transform = 'scale(1)';
+                        }else{
+                            //shrinks and aturns invisible
+                            elem.style.opacity = '0';
+                            elem.style.transform = 'scale(0.9)';
+                        }
+                    }
+                }
+            };
     export default {
         name: "Menu",
+       
         data(){
             return{
                 filters:{
@@ -514,12 +539,24 @@
                     "pasta": false,
                     "pizza": false,
                     "wings": false,
-                }
+                },
+               
             }
         },
-        // methods:{
-        //     toggleFilter
-        // },
+        methods:{
+            
+            
+
+        },
+        mounted (){
+            console.log('mounted bitch');
+            fadeInElements = Array.from(document.getElementsByClassName('fade-in'));
+            window.addEventListener('scroll', handleScroll)
+            handleScroll();
+        },
+        destroyed(){
+            window.removeEventListener('scroll', handleScroll)
+        },
         components:{
             Header, 
             FoodItem,
@@ -541,6 +578,7 @@
     }
     .filters{
         position: sticky;
+        z-index: 999;
         top: 60px;
         background-color: rgba(231, 231, 231, 0.349);
         padding:10px;
@@ -558,11 +596,18 @@
         padding: 5px 10px;
         background: white;
         text-decoration: none;
-        border: 1px solid blue;
+        border: 2px solid rgb(3, 134, 3);
         border-radius: 1em;
         font-weight:bold;
+        color:rgb(3, 134, 3);;
+        font-family: Roboto;
+        
         
     }
+    .filter-btn:link:active, 
+    .filter-btn:visited:active{
+        color: rgb(168, 255, 168);
+    } 
     section{
  
      padding-top: 100px; 
@@ -586,7 +631,16 @@
         max-width: 1300px; 
         margin:auto;
         justify-items: center;
-        align-items: center;
+        /* align-items: center; */
+    }
+    .fade-in {
+        
+        opacity: 0;
+        transition: 0.3s all ease-out;
+        transform:  scale(0.8);
+        
+        
+       
     }
     
     
