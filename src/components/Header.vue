@@ -1,7 +1,10 @@
 <template>
   <div class="container">
     <div class="left">
-      <img class="logo" src="../assets/img/martinoLogo.png" alt="">
+       <router-link  style="text-decoration: none;" to="/Home" >
+           <img class="logo" src="../assets/img/martinoLogo.png" alt="">
+      </router-link>
+     
       <div class="text">
         178 Dupont Street, Toronto 
       </div>
@@ -22,11 +25,26 @@
       
       
     </div>
+    <div ref="sideBar" class="sideBar" :style="sideBarPosition">
+       <router-link  style="text-decoration: none;" to="/Home" >
+          <div class="sideBar-item"
+          >
+            Home
+          </div>
+      </router-link>
+      <router-link  style="text-decoration: none;" to="/Menu" >
+          <div class="sideBar-item"
+          >
+            Menu
+            </div>
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
 import HeaderItem from './HeaderItem.vue'
+
 export default {
   name: 'Header',
   components:{
@@ -47,11 +65,19 @@ export default {
       }else{
         return "icon"
       }
-    }
+    },
+    sideBarPosition(){
+      if(this.sideBarActive){
+        return " transform: translateX(0)"
+      }else{
+        return "transform: translateX(150vw)"
+      }
+    },
+   
   },
   methods:{
     toggleSideBar(){
-      console.log("bitchin")
+      console.log(this.$refs);
       this.sideBarActive = !this.sideBarActive;
     }
   },
@@ -61,6 +87,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+/* -------------- Header Nav -------------- */
 .container{
   position: sticky;
   width: calc(100vw );
@@ -74,6 +102,7 @@ export default {
   z-index: 1000;
 
 }
+
 .left{
   margin-left: 0;
   margin:0;
@@ -102,12 +131,7 @@ export default {
   color: white;
   height: 100%;
 }
-@media (max-width: 899px) { 
-  .right,
-  .text{
-    display:none;
-  }
-}
+
 .menu-item{
   text-decoration: none;
   color: white;
@@ -115,8 +139,17 @@ export default {
 .menu-item-hover{
   background-color: blue;
 }
+
+@media (max-width: 899px) { 
+  .text{
+    display:none;
+  }
+}
+
+
+/* -------------- Hamburger Button -------------- */
 .icon{
-    background: black;
+    background: none;
     border: 0;
     cursor: pointer;
     padding: 0;
@@ -151,6 +184,10 @@ export default {
     
 }
 
+button{
+  z-index: 1000;
+  display: none;
+}
 
 button.active .line1{
   transform: rotate(-405deg) translateY(6px) translateX(-6px);
@@ -160,6 +197,33 @@ button.active .line2{
 }
 button.active .line3{
   transform: rotate(405deg) translateY(-6px) translateX(-6px);
+}
+
+@media (max-width: 899px) { 
+  button{
+    display:inline-block;
+  }
+}
+
+/* -------------- SideBar  -------------- */
+.sideBar{
+  height: 100vh;
+  background: black;
+  position: fixed;
+  width: 100vw;
+  transition: transform 0.5s linear;
+  top:0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 1px;
+  padding: 100px;
+}
+.sideBar-item{
+  color: white;
+  font-size: 68px;
 }
 
 
