@@ -187,6 +187,7 @@ export default {
 button{
   z-index: 1000;
   display: none;
+  transform: scale(1.2);
 }
 
 button.active .line1{
