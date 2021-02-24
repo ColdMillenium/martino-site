@@ -22,6 +22,17 @@
     </section>
     <section class="classic-combo">
       <div class="section-title">Classic Combo</div>
+      <div class="classic-combo-card">
+        <div class="classic-left">
+          <img class="classic-pizza" src="../assets/img/specialPizza/Mediterranean.jpg" alt="">
+        </div>
+        <div class="classic-right">
+          <img class="classic-pasta" src="../assets/img/Pasta/pestoPasta.jpg" alt="">
+          <img class="classic-asian" src="../assets/img/Noodle/shanghaiNoodle.jpg" alt="">
+        </div>
+      </div>
+      <p>Have a cup of coffee: <i class="fas fa-coffee" /></p>
+      <i class="fas fa-plus classic-plus"></i>
     </section>
     <section class="pizza-wing-combos">
         <div class="section-title">Pizza & Wings Combos</div>
@@ -34,29 +45,11 @@
           <PizzaWingCombo size="Party" lbs="3" price="54.05"/>
         </div>
     </section>
+
     <section class="menu-highlights">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="" alt="Third slide">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+      
     </section>
+
     <section class="order-now">
       <div class="section-title">Order Now</div>
       <div class="order-info">Last call for Asian and Pasta dishes is <strong>8PM</strong>. We will continue to make Pizza and Wings until 9PM.</div>
@@ -82,28 +75,26 @@
 import Button from './util/Button.vue'
 import PizzaWingCombo from './food/PizzaWingCombo.vue'
 import Header from './Header.vue'
+
+
 export default {
   name: 'Home',
   components:{
     Button,
     PizzaWingCombo,
-    Header
+    Header,
+    
   },
   props: {
     msg: String
-  }
+  },
+  
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-section{
-  
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
-  background: white;
-  padding: 40px;
- 
-}
+
 .section-title{
  
   font-size: 60px;
@@ -118,6 +109,7 @@ section{
                0px 8px 13px rgba(97, 97, 97, 0.1),
                0px 18px 23px rgba(143, 143, 143, 0.1);
 }
+/* ------------- WELCOME -------------*/
 .welcome{
   width:100%;
   height: 100vh;
@@ -151,18 +143,54 @@ section{
   font-weight: 600;
 
 }
+/* ------------- About us -------------*/
 .about-us{
  display:flex;
  justify-content:center;
 }
-img{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+.store-pic{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  height: 400px;
 }
+.story{
+  width: 75%;
+  display: inline;
+  line-height: 3;
+  text-align: left;;
+}
+.story-content{
+  display: flex;
+  gap: 50px;
+}
+/* img{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+} */
 .about-us-content{
   
   width: 1200px;
   text-align: center;
 }
+/* ------------- Classic Combo -------------*/
+.classic-combo-card{
+  background: grey;
+  max-width: 1000px;
+  
+}
+
+.classic-pizza,
+.classic-pasta,
+.classic-asian{
+  height: 100px;
+}
+.classic-plus{
+  font-size: 50px;
+  color: red;
+}
+
+
+
+/* ------------- PIZZA & WING COMBOS -------------*/
 .pizza-wing-combos{
  padding: 20px;
  background: url(../assets/img/woodTable.jpg);
@@ -180,6 +208,8 @@ img{
   justify-items: center;
   
 }
+
+/* ------------- ORDER NOW -------------*/
 .order-info{
   width: 500px;
   padding: 10px;
@@ -206,20 +236,6 @@ img{
   width: 50vh;
   background: url(../assets/img/map.png);
 }
-.store-pic{
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
-  height: 400px;
-}
-.story{
-  width: 75%;
-  display: inline;
-  line-height: 3;
-  text-align: left;;
-}
-.story-content{
-  display: flex;
-  gap: 50px;
-}
+
 
 </style>
