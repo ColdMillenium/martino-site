@@ -25,7 +25,7 @@
       
       
     </div>
-    <div ref="sideBar" class="sideBar" :style="sideBarPosition">
+    <div ref="sideBar" :class="sideBarClass" >
        <router-link  style="text-decoration: none;" to="/Home" >
           <div class="sideBar-item"
           >
@@ -66,11 +66,11 @@ export default {
         return "icon"
       }
     },
-    sideBarPosition(){
+    sideBarClass(){
       if(this.sideBarActive){
-        return " transform: translateX(0)"
+        return "sideBar sideBarActive"
       }else{
-        return "transform: translateX(150vw)"
+        return "sideBar"
       }
     },
    
@@ -221,11 +221,21 @@ button.active .line3{
   align-items: center;
   grid-gap: 1px;
   padding: 100px;
+  transform: translateX(150vw);
 }
 .sideBar-item{
   color: white;
   font-size: 68px;
 }
+.sideBarActive{
+    transform: translateX(0vw);
+  }
+@media (min-width: 899px) { 
+  .sideBarActive{
+    transform: translateX(150vw);
+  }
+}
+
 
 
 
