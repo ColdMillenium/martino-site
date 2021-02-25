@@ -31,11 +31,11 @@ export default {
         hoverStyle: function () {
             if(this.hovered){
                 return {
-                    color: 'green'
+                    color: 'var(--highlight)'
                 }
             }else{
                 return {
-                    color: 'white'
+                    color: '#2c3e50'
                 }
             }
         }

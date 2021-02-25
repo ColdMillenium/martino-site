@@ -185,7 +185,7 @@ export default {
 }
 .classic-plus{
   font-size: 50px;
-  color: red;
+  color:  var(--highlight);
 }
 
 

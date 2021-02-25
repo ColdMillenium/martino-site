@@ -6,10 +6,10 @@
       </router-link>
      
       <div class="text">
-        178 Dupont Street, Toronto 
+        <em> Dupont Street, Toronto</em> 
       </div>
     <div class="text">|</div>
-    <div class="text">416 929 6000</div>
+    <div class="text"><em>416 - 929 - 6000</em></div>
     </div>
     <div class="right">
      
@@ -97,9 +97,10 @@ export default {
   justify-content: space-between;
   align-items: center;
   
-  background-color: black;
+  background-color: white;
   padding: 0 2em;
   z-index: 1000;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
 }
 
@@ -109,7 +110,7 @@ export default {
   display:flex;
   align-items: center;
   gap: 2em;
-  color: white;
+
 }
 .logo{
  
@@ -128,13 +129,14 @@ export default {
   gap: 5em;
   font-size: 1.25em;
   font-weight: bold;
-  color: white;
+ 
   height: 100%;
 }
 
+
 .menu-item{
   text-decoration: none;
-  color: white;
+ 
 }
 .menu-item-hover{
   background-color: blue;
@@ -164,13 +166,13 @@ export default {
 }
 
 .icon .line{
-    background-color: white;
+    background-color: rgb(233, 53, 53);
     height: 3px;
     width: 20px;
     position: absolute;
     top: 10px;
     left: 10px;
-
+    font-weight: bold;
     transition: opacity 0.6s linear ,transform 0.6s linear;
 }
 .icon .line2{
@@ -209,7 +211,7 @@ button.active .line3{
 /* -------------- SideBar  -------------- */
 .sideBar{
   height: 100vh;
-  background: black;
+  background: white;
   position: fixed;
   width: 100vw;
   transition: transform 0.5s linear;
@@ -224,8 +226,9 @@ button.active .line3{
   transform: translateX(150vw);
 }
 .sideBar-item{
-  color: white;
+  color: #2c3e50;
   font-size: 68px;
+  font-weight: 600;
 }
 .sideBarActive{
     transform: translateX(0vw);

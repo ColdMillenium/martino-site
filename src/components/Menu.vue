@@ -594,19 +594,20 @@
     .filter-btn{
         position: static;
         padding: 5px 10px;
-        background: white;
+        background:white;
         text-decoration: none;
-        border: 2px solid rgb(3, 134, 3);
+        border: 2.2px solid var(--highlight);
         border-radius: 1em;
-        font-weight:bold;
-        color:rgb(3, 134, 3);;
+        
+        color:var(--highlight);
         font-family: Roboto;
         
         
     }
     .filter-btn:link:active, 
     .filter-btn:visited:active{
-        color: rgb(168, 255, 168);
+        font-weight: bold;
+        transform: scale(1.05)
     } 
     section{
  

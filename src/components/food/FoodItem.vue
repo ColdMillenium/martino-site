@@ -101,6 +101,10 @@ export default {
         margin: 0;
         font-size: 18px;
     }
+    .single-price,
+    .meat-price{
+        color: var(--highlight);
+    }
     .meat-price{
         font-weight: bold;
     }

@@ -40,11 +40,17 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,400;1,500&display=swap');
+:root{
+    --black: #2c3e50;
+    --highlight:  rgb(202, 53, 53);
+}
 #app {
   font-family: Ubuntu;
   text-align: center;
-  color: #2c3e50;
- 
+  color: var(--black);
+}
+p{
+  font-family: Roboto;
 }
 h1{
 
@@ -57,7 +63,7 @@ body, h1, h2, h3{
   padding:0;
   width: 100vw;
   overflow-x: hidden;
-  color: black;
+  color: #2c3e50;
 }
 *{
   box-sizing: border-box;
