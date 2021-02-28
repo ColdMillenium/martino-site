@@ -1,5 +1,6 @@
 <template>
-    <a class="btn">
+   
+    <a class="btn" :href="href">
         <slot></slot>
     </a>
 </template>
@@ -8,7 +9,8 @@
     export default {
         name: 'Button',
         props: {
-            text: String
+            text: String,
+            href: String
         }
     }
 </script>
