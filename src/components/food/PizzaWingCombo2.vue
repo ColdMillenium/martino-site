@@ -14,7 +14,7 @@
             </div>
             <div class="desc">
                 <div class="pw-subtitle">  {{size}} Combo</div>
-                <p class="chicken">3 toppings on pizza 2/ {{chicken}} LB Chicken Wings!</p>
+                <p class="chicken">3 topping pizza AND {{chicken}} LB Chicken Wings!</p>
                 <p class="price">${{price}}</p>
             </div>
             
@@ -44,22 +44,22 @@ export default {
                 },
                 {
                     size: "large",
-                    chicken: "1",
+                    chicken: "1.5",
                     price: "29.95"
                 },
                 {
                     size: "x-large",
-                    chicken: "1",
+                    chicken: "2",
                     price: "38.49"
                 },
                 {
                     size: "family",
-                    chicken: "1",
+                    chicken: "2.5",
                     price: "41.79"
                 },
                 {
                     size: "party",
-                    chicken: "1",
+                    chicken: "3",
                     price: "54.05"
                 },
             ]
@@ -110,7 +110,7 @@ export default {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         width: 400px;
-        gap: 10px;
+        gap: 20px;
     }
     .pw-btn{
         display:grid;
@@ -134,7 +134,17 @@ export default {
         background: rgb(255, 244, 97);
         color: var(--highlight);
     }
-    
+
+    .desc{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .desc *{
+        padding: 0;
+        margin: 0;
+       
+    }
     .pw-subtitle{
         font-family: "Roboto";
         font-size: 32px;
