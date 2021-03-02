@@ -1,56 +1,100 @@
 <template>
   <div class="container">
-    <Header/>
+ 
     <section class="welcome">
        
       <h1 class= "welcome-title1">Pizza & Asian </h1>
       <h2 class="welcome-title2">Fusion Kitchen</h2>
-      <Button class="welcome-btn">Order Now!</Button>
+      <Button class="welcome-btn" href="#order-now">Order Now!</Button>
       
     </section>
     
     <section class="about-us">
-      <div class="about-us-content">
+   
+      <div class=" section-container">
         <div class="section-title">Our Story</div>
         <div class="story-content">
-            <div class="story">For the past 17 years, <em>Martino</em> has been working hard to serve the community while maintaining quality and service. We started out as a simple pizza store in 2003, establishing our reputation as the community’s “go to” pizza place. Since then we have expanded our menu and concept to combine Italian and Asian foods together, conveniently served in one location. This unique blend of culture is just what Toronto needs as a culturally diverse city. We have built relationships with the community over the course of years, and that relationship is still strong as ever! As time goes by, the community changes and so do people, but Martino will continue to deliver the quality food that people love from us. Our words are only as good as our actions, and we will continue to uphold our values to better serve the community.</div>
+           <div>
+            <p class="story">For the past 17 years, <em>Martino</em> has been working hard to serve the community while maintaining quality and service. We started out as a simple pizza store in 2003, establishing our reputation as the community’s “go to” pizza place. Since then we have expanded our menu and concept to combine Italian and Asian foods together, conveniently served in one location. 
+            
+            </p>
+            <p class="story">This unique blend of culture is just what Toronto needs as a culturally diverse city. We have built relationships with the community over the course of years, and that relationship is still strong as ever! As time goes by, the community changes and so do people, but Martino will continue to deliver the quality food that people love from us. Our words are only as good as our actions, and we will continue to uphold our values to better serve the community.</p>
+            </div>
             <img class="store-pic" src="../assets/img/store.jpg" alt="">
         </div>
         
+   
       </div>
      
     </section>
     <section class="classic-combo">
+      <div class="section-container">
       <div class="section-title">Classic Combo</div>
-      <div class="classic-combo-card">
+      <div class="classic-combo-pics">
         <div class="classic-left">
           <img class="classic-pizza" src="../assets/img/specialPizza/Mediterranean.jpg" alt="">
         </div>
+        <div class="classic-plus">
+          <i class="fas fa-plus"></i>
+        </div>
         <div class="classic-right">
           <img class="classic-pasta" src="../assets/img/Pasta/pestoPasta.jpg" alt="">
+          <div class="classic-or">Or</div>
           <img class="classic-asian" src="../assets/img/Noodle/shanghaiNoodle.jpg" alt="">
         </div>
       </div>
-      <p>Have a cup of coffee: <i class="fas fa-coffee" /></p>
-      <i class="fas fa-plus classic-plus"></i>
+      <p class="classic-combo-desc">
+        1 PIZZA WITH 3 TOPPINGS
+        PLUS
+        YOUR CHOICE OF
+        PASTA OR ASIAN DISH
+      </p>
+      <div class="classic-combo-prices">
+        <div class="classic-combo-price">
+          <div class="classic-size">Small</div>
+          <div class="classic-price">23.45</div>
+        </div>
+        <div class="classic-combo-price">
+          <div class="classic-size">Medium</div>
+          <div class="classic-price">26.99</div>
+        </div>
+        <div class="classic-combo-price">
+          <div class="classic-size">Large</div>
+          <div class="classic-price">29.35</div>
+        </div>
+        <div class="classic-combo-price">
+          <div class="classic-size">X-Large</div>
+          <div class="classic-price">33.34</div>
+        </div>
+        <div class="classic-combo-price">
+          <div class="classic-size">Family</div>
+          <div class="classic-price">36.75</div>
+        </div>
+      </div>
+     
+      </div>
     </section>
     <section class="pizza-wing-combos">
+      <div class="section-container">
         <div class="section-title">Pizza & Wings Combos</div>
-        <div class="pizza-wing-combo-list">
+        <!-- <div class="pizza-wing-combo-list">
           <PizzaWingCombo size="Small" lbs="1" price="19.65"/>
           <PizzaWingCombo size="Medium" lbs="1" price="23.25"/>
           <PizzaWingCombo size="Large" lbs="1 (1/2)" price="29.95"/>
           <PizzaWingCombo size="X-Large" lbs="2" price="38.49"/>
           <PizzaWingCombo size="Family" lbs="2 (1/2)" price="41.79"/>
           <PizzaWingCombo size="Party" lbs="3" price="54.05"/>
-        </div>
+        </div> -->
+        <PizzaWingCombo2/>
+      </div>
     </section>
 
     <section class="menu-highlights">
       
     </section>
 
-    <section class="order-now">
+    <section id="order-now" class="order-now">
+      <div class="section-container">
       <div class="section-title">Order Now</div>
       <div class="order-info">Last call for Asian and Pasta dishes is <strong>8PM</strong>. We will continue to make Pizza and Wings until 9PM.</div>
       <div class="order-content">
@@ -64,6 +108,7 @@
           <img src='../assets/img/map.png' alt="">
         </div>
       </div>
+      </div>
  
       
     </section>
@@ -73,16 +118,18 @@
 <script>
 
 import Button from './util/Button.vue'
-import PizzaWingCombo from './food/PizzaWingCombo.vue'
-import Header from './Header.vue'
+// import PizzaWingCombo from './food/PizzaWingCombo.vue'
+import PizzaWingCombo2 from './food/PizzaWingCombo2.vue'
+
 
 
 export default {
   name: 'Home',
   components:{
     Button,
-    PizzaWingCombo,
-    Header,
+    // PizzaWingCombo,
+    PizzaWingCombo2,
+ 
     
   },
   props: {
@@ -94,7 +141,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+section{
+  margin-bottom: 100px;
+}
 .section-title{
  
   font-size: 60px;
@@ -110,6 +159,10 @@ export default {
                0px 18px 23px rgba(143, 143, 143, 0.1);
 }
 /* ------------- WELCOME -------------*/
+.section-container{
+  margin: auto;
+  max-width: 1000px;
+}
 .welcome{
   width:100%;
   height: 100vh;
@@ -157,7 +210,7 @@ export default {
   width: 75%;
   display: inline;
   line-height: 3;
-  text-align: left;;
+  text-align: left;
 }
 .story-content{
   display: flex;
@@ -169,31 +222,89 @@ export default {
 .about-us-content{
   
   width: 1200px;
-  text-align: center;
+  text-align: left;
 }
 /* ------------- Classic Combo -------------*/
-.classic-combo-card{
-  background: grey;
-  max-width: 1000px;
-  
+section{
+  margin-bottom: 100px;
+}
+.classic-combo .section-container{
+   background: rgb(250, 220, 157);
+   border-radius: 3px;
+   padding: 20px;
+   /* background: url(./../assets/img/vintage3.jpg); */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.classic-combo-pics,
+.classic-left,
+.classic-right,
+.classic-plus{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+   flex-direction: column;
+  gap: 10px;
 }
 
+.classic-combo-pics{
+ 
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.classic-left{
+  padding: 30px;
+}
 .classic-pizza,
 .classic-pasta,
 .classic-asian{
-  height: 100px;
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  border: 4px solid var(--highlight);
 }
 .classic-plus{
   font-size: 50px;
   color:  var(--highlight);
+
 }
+.classic-right{
+
+  padding: 1em 0;
+  flex-direction: row;
+}
+.classic-or{
+  font-size: 30px;
+  font-weight: 600;
+}
+.classic-combo-desc{
+  
+}
+.classic-combo-prices,
+.classic-combo-price{
+  display: flex;
+  justify-content: space-evenly
+}
+.classic-combo-price{
+  flex-direction: column;
+}
+.classic-price{
+  font-weight: 600;
+  font-size: 20px
+}
+.classic-size{
+
+  
+}
+
 
 
 
 /* ------------- PIZZA & WING COMBOS -------------*/
 .pizza-wing-combos{
  padding: 20px;
- background: url(../assets/img/woodTable.jpg);
+ /* background: url(../assets/img/woodTable.jpg); */
+ background: var(--black);
  background-size: cover;
 }
 .pizza-wing-combos
@@ -233,8 +344,11 @@ export default {
   font-size: 24px;
 }
 .order-content-right{
-  width: 50vh;
+  width: 50%;
   background: url(../assets/img/map.png);
+}
+.order-content-right img{
+  width: 100%;
 }
 
 

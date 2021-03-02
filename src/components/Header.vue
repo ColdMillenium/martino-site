@@ -97,7 +97,8 @@ export default {
   justify-content: space-between;
   align-items: center;
   
-  background-color: white;
+  background: url(./../assets/img/vintage3.jpg);
+;
   padding: 0 2em;
   z-index: 1000;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -211,7 +212,8 @@ button.active .line3{
 /* -------------- SideBar  -------------- */
 .sideBar{
   height: 100vh;
-  background: white;
+  background:url(../assets/img/vintage3.jpg);
+;
   position: fixed;
   width: 100vw;
   transition: transform 0.5s linear;

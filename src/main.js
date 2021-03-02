@@ -4,10 +4,13 @@ import VueRouter from 'vue-router'
 import Home from './components/Home.vue'
 import Menu from './components/Menu.vue'
 
-Vue.config.productionTip = false
-Vue.use(VueRouter)
 
-// const NotFound = { template: '<p>Page not found</p>' }
+
+
+
+Vue.config.productionTip = false
+
+Vue.use(VueRouter)
 
 
 

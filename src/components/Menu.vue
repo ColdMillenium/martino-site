@@ -1,6 +1,5 @@
 <template>
     <div>
-        <Header class="dark" />
         <div class="banner-background">
             
         </div>
@@ -502,8 +501,6 @@
     </div>
 </template>
 <script>
-  
-    import Header from './Header.vue'
     import FoodItem from './food/FoodItem.vue';
     var fadeInElements = [] // array holding all elements using fade-in class
     const isElemVisible = (el) =>{
@@ -558,9 +555,7 @@
             window.removeEventListener('scroll', handleScroll)
         },
         components:{
-            Header, 
             FoodItem,
-           
         }
     }
 </script>
