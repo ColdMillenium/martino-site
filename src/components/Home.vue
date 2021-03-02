@@ -33,42 +33,45 @@
       <div class="classic-combo-pics">
         <div class="classic-left">
           <img class="classic-pizza" src="../assets/img/specialPizza/Mediterranean.jpg" alt="">
+          <p class="classic-combo-desc">
+            1 Pizza w/ 3 Toppings 
+          </p>
+
         </div>
         <div class="classic-plus">
           <i class="fas fa-plus"></i>
         </div>
         <div class="classic-right">
-          <img class="classic-pasta" src="../assets/img/Pasta/pestoPasta.jpg" alt="">
-          <div class="classic-or">Or</div>
-          <img class="classic-asian" src="../assets/img/Noodle/shanghaiNoodle.jpg" alt="">
+          <div >
+            <img class="classic-pasta" src="../assets/img/pasta.png" alt="">
+            <img class="classic-asian" src="../assets/img/stirfry.png" alt="">
+          </div>
+          
+          <p class="classic-combo-desc"> your choice of </p>
+          <p class="classic-combo-desc">Pasta or Asian Dish</p>
         </div>
       </div>
-      <p class="classic-combo-desc">
-        1 PIZZA WITH 3 TOPPINGS
-        PLUS
-        YOUR CHOICE OF
-        PASTA OR ASIAN DISH
-      </p>
+      
       <div class="classic-combo-prices">
         <div class="classic-combo-price">
           <div class="classic-size">Small</div>
-          <div class="classic-price">23.45</div>
+          <div class="classic-price">$23.45</div>
         </div>
         <div class="classic-combo-price">
           <div class="classic-size">Medium</div>
-          <div class="classic-price">26.99</div>
+          <div class="classic-price">$26.99</div>
         </div>
         <div class="classic-combo-price">
           <div class="classic-size">Large</div>
-          <div class="classic-price">29.35</div>
+          <div class="classic-price">$29.35</div>
         </div>
         <div class="classic-combo-price">
           <div class="classic-size">X-Large</div>
-          <div class="classic-price">33.34</div>
+          <div class="classic-price">$33.34</div>
         </div>
         <div class="classic-combo-price">
           <div class="classic-size">Family</div>
-          <div class="classic-price">36.75</div>
+          <div class="classic-price">$36.75</div>
         </div>
       </div>
      
@@ -229,7 +232,7 @@ section{
   margin-bottom: 100px;
 }
 .classic-combo .section-container{
-   background: rgb(250, 220, 157);
+   background: rgb(255, 255, 255);
    border-radius: 3px;
    padding: 20px;
    /* background: url(./../assets/img/vintage3.jpg); */
@@ -242,7 +245,7 @@ section{
   display:flex;
   justify-content:center;
   align-items: center;
-   flex-direction: column;
+   flex-direction: row;
   gap: 10px;
 }
 
@@ -253,7 +256,7 @@ section{
 }
 
 .classic-left{
-  padding: 30px;
+  flex-direction: column;
 }
 .classic-pizza,
 .classic-pasta,
@@ -261,32 +264,50 @@ section{
   height: 150px;
   width: 150px;
   border-radius: 100%;
-  border: 4px solid var(--highlight);
+  /* border: 4px solid var(--highlight); */
+  filter: drop-shadow(7px 7px 7px rgba(0, 0, 0, 0.178));
 }
+
 .classic-plus{
   font-size: 50px;
-  color:  var(--highlight);
+  color:  var(--black);
 
 }
 .classic-right{
+  position: relative;
 
   padding: 1em 0;
-  flex-direction: row;
+  flex-direction: column;
+  width: 300px;
+  gap: 10px
+}
+
+
+.classic-pasta-or-asian{
+  display: flex;
+  height: 100px;
 }
 .classic-or{
   font-size: 30px;
   font-weight: 600;
 }
 .classic-combo-desc{
-  
+  font-weight: 600;
+  font-size: 24px;
+  margin:0;
+ 
 }
 .classic-combo-prices,
 .classic-combo-price{
+  margin: 30px 0 0 0;
   display: flex;
   justify-content: space-evenly
 }
 .classic-combo-price{
   flex-direction: column;
+  border: 3px solid var(--highlight);
+  padding: 0.5em 1.5em;
+  border-radius: 5px
 }
 .classic-price{
   font-weight: 600;
