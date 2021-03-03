@@ -3,7 +3,9 @@
         <img :src="picUrl" :alt="'picture of ' + dishName + 'meal'">
        
         <div v-if="prices.length>1" class="meal-text">
-            <div><h2 class="dish-name">{{dishName}}</h2></div>
+            <div><h2 class="dish-name">
+                {{dishName}} <img class="veg-leaf" v-if="veg" src="../../assets/img/specialPizza/vegetarianLeaf.png" alt="">
+            </h2></div>
             <div><p class= "description" >{{desc}}</p></div>
             
             <div class="price-options">
@@ -33,7 +35,11 @@ export default {
       prices: Array,
       meats: Array,
       price: Number,
-      desc: String
+      desc: String,
+      veg: {
+          type: Boolean,
+          default: false
+      },
     },
     data (){
         return {
@@ -43,7 +49,7 @@ export default {
     computed:{
         testData(){
             return this.prices
-        }
+        },
     }
 
 }
@@ -61,6 +67,10 @@ export default {
         text-align:left;
         width: 100%;
         height: 50%;
+    }
+    .veg-leaf{
+        width: 25px;
+        height: 25px;
     }
     p,h1,h2,h3{
         padding: 0;

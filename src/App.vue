@@ -74,4 +74,28 @@ body, h1, h2, h3{
 html {
   scroll-behavior: smooth;
 }
+
+.menu-btn{
+        display:grid;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        padding: 1em;
+        background-color: var(--highlight);
+        width: 100px;
+        border-radius: 3px;
+        cursor: pointer;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+.menu-btn:hover{
+    transform: scale(1.08);
+}
+.menu-btn :hover{
+    color: var(--highlight)
+}
+.menu-btn.selected{
+  background: rgb(255, 244, 97);
+  color: var(--highlight);
+  font-weight: bold;
+}
 </style>

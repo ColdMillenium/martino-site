@@ -19,15 +19,358 @@
            
 
         </div>
-        
+    
         <section id="specialty-pizza">
             <div class="section-title">~ Specialty Pizza ~</div>
+            <div class="pizza-guide-container">
+                <div class="pizza-guide">
+                    <div class="leaf-legend">
+                         <img class="pizza-guide-leaf" src="../assets/img/specialPizza/vegetarianLeaf.png" alt="leaf symbolizing the meal is vegetarian">
+                        <p>= Vegetarian</p>
+                    </div>
+                    <div class="pizza-options">
+                        <div class="pizza-size-desc">
+                            <div class="size">  {{size}} Pizza</div>
+                            <p class="inches">{{inches}}</p>
+                            <p class="slices">{{slices}} slices</p>
+                        </div>
+                        <div class="pizza-sizes">
+                            <div  
+                                v-for="(option, index) in options" 
+                                v-on:click="updateSelected(index)" 
+                                :class="btnClass(index)"
+                                :key="option"
+                            >
+                                {{option.size}}
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    
+                   
+                </div>
+            </div>
+           
+            <div class="foodlist">
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="CLASSIC MARGHERITA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    veg="true"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Fresh Tomato, Basil, Parmesan Cheese, Spices, Ricotta Cheese."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="NAPLES GARLIC MARGHERITA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    veg="true"
+                    :prices="['12.10', '16.10', '18.70', '23.30', '26.90', '30.80']"
+                    desc = "Double Cheese, Spices, Garlic, Basil."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="HOUSE SPECIAL"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Chicken, Bacon, Red Pepper, Sun Dried Tomatoes, Feta."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="WHITE PIZZA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    veg="true"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Olive Oil, Spices, Spinach, Tomato, Roasted Red Peppers, Garlic, Ricotta, Parmesan."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="SUPREME"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Fresh Tomato, Basil, Parmesan Cheese, Spices, Ricotta Cheese."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="BUFFALO"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['13.65', '18.15', '20.95', '25.95', '29.95', '34.15']"
+                    desc = "Mushrooms, Onions, Chicken, Gorgonzola."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="PRIMAVERA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    veg="true"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Spinach, Red Peppers, Eggplant, Zucchini, Mushrooms."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="DIAVOLA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['13.65', '18.15', '20.95', '25.95', '29.95', '34.15']"
+                    desc = "Sausage, Onions, Hot Peppers, Mushrooms."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="MEDITERRANEAN"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    veg="true"
+                    :prices="['16.75', '22.25', '25.45', '31.25', '36.05', '40.85']"
+                    desc = "Spinach, Feta, Tomatoes, Onions, Black Olives, Parmesan."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="BACON CHEESE BURGER PIZZA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['13.65', '18.15', '20.95', '25.95', '29.95', '34.15']"
+                    desc = "Ground Beef, Onions, Bacon, Cheddar."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="GREEK"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    veg="true"
+                    :prices="['13.65', '18.15', '20.95', '25.95', '29.95', '34.15']"
+                    desc = "Feta, Black Olives, Tomatoes, Onions."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="BBQ SAUCE PIZZA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Fresh Tomato, Basil, Parmesan Cheese, Spices, Ricotta Cheese."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="SPINACH PIZZA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    veg="true"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Spinach, Goat Cheese, Cashew Nuts, Onions, Roasted Red Peppers."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="CALIFORNIA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Pesto Sauce, Sausage, Onions, Roasted Red Peppers, Oregano, Parmesan."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="CHICKEN PESTO"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Chicken, Artichoke, Pesto, Roasted Red Peppers, Roasted Garlic, Parmesan."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="COMBINATION"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    veg="true"
+                    :prices="['16.75', '22.25', '25.45', '31.25', '36.05', '40.85']"
+                    desc = "Pesto, Tomato sauce, Onions, Tomatoes, Artichoke, Ricotta, Black Olives"
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="SUPER MEAT"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Pepperoni, Bacon, Ground Beef, Sausages, Ham."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="SUPER VEGGIE"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    veg="true"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Green Peppers, Tomatoes, Mushrooms, Green Olives, Onions."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="CLASSIC MARGHERITA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Fresh Tomato, Basil, Parmesan Cheese, Spices, Ricotta Cheese."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="SUPER DELUXE"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['16.75', '22.25', '25.45', '31.25', '36.05', '40.85']"
+                    desc = "Pepperoni, Mushrooms, Tomato, Green Peppers, Onions, Bacon."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="SOPPRESSATA PIZZA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['16.75', '22.25', '25.45', '31.25', '36.05', '40.85']"
+                    desc = "Soppressata, Sautéed Onions, Tomatoes, Parmesan, Roasted garlic, Pesto Sauce."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="CLASSIC MARGHERITA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Fresh Tomato, Basil, Parmesan Cheese, Spices, Ricotta Cheese."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="BACON CLUB"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Double Pepperoni, Double Bacon, Mushrooms."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="PIZZA QUATRO STAGIONI"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    veg="true"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Artichokes, Tomatoes, Soppressata, Prosciutto, Mushrooms."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="GENERAL TAO’S PIZZA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
+                    desc = "Sweet and Sour Chicken, Onion, Green & Red Peppers."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="DUPONT STRIP PIZZA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['12.10', '16.10', '18.70', '23.30', '26.90', '30.80']"
+                    desc = "Pepperoni, Mushroom, Green Olives."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="MARTINO’S TROPICAL PIZZA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['12.10', '16.10', '18.70', '23.30', '26.90', '30.80']"
+                    desc = "Pepperoni, Bacon, Pineapple."
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="ALFREDO PIZZA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['18.30', '24.30', '27.70', '33.90', '39.10', '44.20']"
+                    desc = "Cream, Parmesan, Chicken, Bacon, Mushroom, Onion, Spinach"
+                />
+                <FoodItem
+                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    dishName="RED CURRY CHICKEN PIZZA"
+                    :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
+                    :prices="['16.75', '22.25', '25.45', '31.25', '36.05', '40.85']"
+                    desc = "Red Curry Sauce, Chicken, Red & Green Peppers, Onion, Pineapple, Thai Basil, Lime Leaf."
+                />
+            
+            </div>
         </section>
         <section id="create-pizza">
             <div class="section-title">Create your own Pizza</div>
+            <div class="create-pizza-container">
+                <div class="create-pizza">
+                    <div class="pizza-pricing">
+                        <div class="pizza-size-title">Pizza sizes</div>
+                        <div  
+                                v-for="(option, index) in options" 
+                                v-on:click="updateSelected(index)" 
+                                class="pizza-size-desc"
+                                :key="option"
+                            >
+                                <div> <strong>{{option.size}}</strong></div>
+                               <div>  {{option.inches}}</div>
+                               <div>{{option.slices}} Slices</div>
+                              
+                        
+                         </div>
+                         <div>Basic Tomato Sauce</div>
+                         <div  
+                                v-for="(tomatoSaucePrice, index) in tomatoSaucePrices" 
+                                :key="index"
+                            >
+                               ${{tomatoSaucePrice}}
+                         </div>
+                         <div>Additional Toppings</div>
+                         <div  
+                                v-for="(toppingPrice, index) in toppingPrices" 
+                                :key="index"
+                            >
+                               ${{toppingPrice}}
+                         </div>
+
+                    </div>
+                    <div class="calzone">
+                        <div class="calzone-info">
+                            <p>Calzone</p>
+                            <p>basic ssauce & cheese: $7.99</p>
+                            <p>any additional toppings: $1.10</p>
+                        </div>
+                    
+                            <img class="calzone-pic" src="../assets/img/CreateYourOwn/calzone.jpg" alt="picture of delicious calzone">
+                      
+                       
+                    </div>
+                    <div class="toppings">
+                        <h2>Toppings</h2>
+                        <div class="toppings-list">
+                            <div class="pizza-sauce">
+                                <div class="toppings-subtitle">Pizza Sauce</div>
+                                <p v-for="(pizzaSauce, index) in pizzaSauces" class="pizza-topping" :key="index">
+                                   {{pizzaSauce}}
+                                </p>
+                            </div>
+                            <div class="veg-toppings">
+                                <div class="toppings-subtitle">Vegetables</div>
+                                <p v-for="(vegTopping, index) in vegToppings" class="pizza-topping" :key="index">
+                                   {{vegTopping}}
+                                </p>
+                            </div>
+                            <div class="cheese-toppings">
+                                <div class="toppings-subtitle">Cheese</div>
+                                <p v-for="(cheeseTopping, index) in cheeseToppings" class="pizza-topping" :key="index">
+                                   {{cheeseTopping}}
+                                </p>
+                            </div>
+                            <div class="meat-toppings">
+                                <div class="toppings-subtitle">Meat</div>
+                                <p v-for="(meatTopping, index) in meatToppings" class="pizza-topping" :key="index">
+                                   {{meatTopping}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section  id="wings">
             <div class="section-title">Wings</div>
+            <div class="wings-container">
+                <div class="wings">
+                    <div class="wings-pics">
+                        <img class="wings-pic" src="../assets/img/Wings/wingsTransparent.png" alt="">
+                    </div>
+                    <div class="wings-sizes">
+                        <div class="wings-subtitle">Sizes</div>
+                        <div v-for="(wingSize, index) in wingSizes" class="wing-size" :key="index">
+                            <p>{{wingSize.lbs}} LBS</p>
+                            <p>{{wingSize.info}}</p>
+                            <p>${{wingSize.price}}</p>
+                        </div>
+                    </div>
+                    <div class="wings-sauces">
+                        <div class="wings-subtitle">Sauces</div>
+                        <p v-for="(sauce,index) in sauces" class="sauce" :key="index">
+                            {{sauce}}
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
         </section>
         <section  id="pasta">
             <div class="section-title">Pasta</div>
@@ -537,14 +880,144 @@
                     "pizza": false,
                     "wings": false,
                 },
+                selected: 0,
+                tomatoSaucePrices:[
+                    "7.45",
+                    "9.95",
+                    "11.95",
+                    "15,35",
+                    "17.75",
+                    "20.75",
+                ],
+                toppingPrices:[
+                    "1.55",
+                    "2.05",
+                    "2.25",
+                    "2.65",
+                    "3.05",
+                    "3.35"
+                ],
+                sauces:[
+                    'BBQ',
+                    'Medium',
+                    'Hot',
+                    'Honey Garlic',
+                    'Spicy Honey G.',
+                    'Honey BBQ',
+                    'General Tao',
+                    'Thai Chilli'
+                ],
+                pizzaSauces:[
+                    "Pesto",
+                    "BBQ",
+                    "Garlic",
+                    "Olive Oil"
+                ],
+                vegToppings:[
+                    "Mushrooms",
+                    "Green Peppers",
+                    "Onions",
+                    "Olives",
+                    "Black Olives",
+                    "Tomatoes"
+
+                ],
+                cheeseToppings:[
+                    "Mozzarella",
+                    "Cheddar",
+                    "Feta",
+                    "Goat Cheese",
+                    "Gorgonzola",
+                    "Ricotta"
+                ],
+                meatToppings:[
+                    "Pepperoni",
+                    "Ham",
+                    "Prosciutto",
+                    "Bacon",
+                    "Beef",
+                    "Hot Sausage",
+                    "Mild Sausage",
+                    "Chicken"
+                ],
+                wingSizes:[
+                    {
+                        lbs:'1',
+                        info: '(10-12 Pieces)',
+                        price: '9.75'
+                    },
+                    {
+                        lbs:'2',
+                        info: '(+ 5 Wings)',
+                        price: '19.49'
+                    },
+                    {
+                        lbs:'5',
+                        info: '(+1lb Wings',
+                        price: '48.75'
+                    }
+                ],
+                options: [
+                        {
+                            size: "small",
+                            slices: "6",
+                            inches: "10''"
+                        },
+                        {
+                            size: "Medium",
+                            slices: "8",
+                            inches: "12''"
+                        },
+                        {
+                            size: "Large",
+                            slices: "10",
+                            inches: "14''"
+                        },
+                        {
+                            size: "X-Large",
+                            slices: "12",
+                            inches: "16''"
+                        },
+                        {
+                            size: "Family",
+                            slices: "12",
+                            inches: "18''"
+                        },
+                        {
+                            size: "Party",
+                            slices: "15",
+                            inches: "21''"
+                        },
+                         
+
+                    
+                ]
                
             }
         },
-        methods:{
-            
-            
-
+         computed:{
+        slices(){
+            return this.options[this.selected].slices;
         },
+        size(){
+            return this.options[this.selected].size;
+        },
+        inches(){
+            return this.options[this.selected].inches;
+        },
+    },
+    methods:{
+        updateSelected(index){
+            this.selected = index;
+        },
+        btnClass(index){
+            if(this.selected === index){
+                return "menu-btn selected"
+            }else{
+                return "menu-btn"
+            }
+        }
+    },
         mounted (){
             console.log('mounted bitch');
             fadeInElements = Array.from(document.getElementsByClassName('fade-in'));
@@ -634,10 +1107,119 @@
         opacity: 0;
         transition: 0.3s all ease-out;
         transform:  scale(0.8);
-        
-        
-       
     }
+    /* ---------- Specialty Pizza---------- */
+        .pizza-guide-container{
+            background: white;
+            width: 100%;
+        }
+        .pizza-guide{
+            width: 1300px;;
+            background: rgb(255, 255, 255);
+            margin:auto;
+            color: var(--black);
+            text-align: left;
+            padding: 3em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center; 
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            margin-bottom: 50px;
+           
+        }
+        .pizza-guide-leaf{
+            height: 50px;
+        }
+        .leaf-legend{
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 32px;
+        }
+        .pizza-options{
+            display: flex;
+            flex-direction: row;
+            gap: 100px;
+        }
+        .pizza-sizes{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 5px;
+            
+        }
+        .pizza-size-desc{
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+        }
+        .size{
+            font-size: 32px;
+        }
+    /* ---------- Wings---------- */
+        .wings{
+            display: grid;
+            width: 1000;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            max-width: 1300px;
+            margin: auto;
+        }
+        .wings-pic{
+            width: 100%;
+        }
+        .wings-subtitle{
+            font-family: 'Roboto';
+            font-size: 32px;
+            font-weight: 600;
+        }
+        .sauce{
+            text-decoration: none;
+        }
+
+    /* ---------- Create your own pizza---------- */
+    .create-pizza-container{
+        padding: 2em;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+        .pizza-pricing{
+            display: grid;
+            grid-template-columns: 6fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            justify-content: center;
+            width: 1300px;
+            margin: auto;
+            
+        }
+        .pizza-option{
+            display: flex;
+            flex-direction: column;
+        }
+        .pizza-size-title{
+            font-size: 24px;
+        }
+        .calzone-pic{
+            width: 300px;
+        }
+        .toppings-list{
+            display: flex;
+            justify-content: center;
+            max-width: 1300px;
+            margin: auto;
+            gap: 100px;
+            margin-top: 30px;
+        }
+        .toppings-subtitle{
+            font-size: 24px;
+            font-weight: 600;
+            font-family: 'Roboto';
+
+        }
+
+
+        
+
     
     
 </style>
