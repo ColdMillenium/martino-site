@@ -82,9 +82,9 @@ export default {
         },
         btnClass(index){
             if(this.selected === index){
-                return "pw-btn selected"
+                return "menu-btn selected"
             }else{
-                return "pw-btn"
+                return "menu-btn"
             }
         }
     }
@@ -130,15 +130,13 @@ export default {
     .pw-btn :hover{
         color: var(--highlight)
     }
-    .selected{
-        background: rgb(255, 244, 97);
-        color: var(--highlight);
-    }
+    
 
     .desc{
         display: flex;
         flex-direction: column;
         gap: 30px;
+        color: var(--black)
     }
     .desc *{
         padding: 0;

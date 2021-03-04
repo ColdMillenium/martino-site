@@ -1,9 +1,10 @@
 <template>
+
     <div class="container fade-in">
         <img :src="picUrl" :alt="'picture of ' + dishName + 'meal'">
        
         <div v-if="prices.length>1" class="meal-text">
-            <div><h2 class="dish-name">
+            <div class="meal-header"><h2 class="dish-name">
                 {{dishName}} <img class="veg-leaf" v-if="veg" src="../../assets/img/specialPizza/vegetarianLeaf.png" alt="">
             </h2></div>
             <div><p class= "description" >{{desc}}</p></div>
@@ -24,6 +25,8 @@
             
         </div>
     </div>
+    
+
 </template>
 
 <script>
@@ -56,17 +59,18 @@ export default {
 </script>
 <style scoped>
     .container{
-      
-        background: url(../../assets/img/vintage3.jpg);
-        width: 20em;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        display: flex;
+        background: white;
         
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        max-width: 650px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 5px;
         
     }
     img{
-        text-align:left;
-        width: 100%;
-        height: 50%;
+        width: 30%;
     }
     .veg-leaf{
         width: 25px;
@@ -77,13 +81,14 @@ export default {
         margin:0;
     }
     .meal-text{
-        margin-left:0;
+        
         display:flex;
         flex-direction: column;
+        justify-content: space-between;
         gap:10px;
-        padding: 20px;
+        padding: 10px;
         text-align: left;
-        width: 100%;
+        width: 70%;
         
     }
     .meal-header{
@@ -95,14 +100,20 @@ export default {
         margin-bottom: 1em;
     }
     .description{
+    
         font-style: italic;
         font-weight: 600;
+        overflow: wrap;
     }
     .price-options{
         display:flex;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content:space-between;
-        
+        gap: 20px;
+    }
+    .price-options.pizza{
+
     }
     
     .meatItem{
@@ -111,13 +122,21 @@ export default {
         width: 50px;
         margin: 0;
         font-size: 18px;
+        text-align: center;
+      
+    
+    
+    }
+    .meat-name{
+        font-weight: bold;
     }
     .single-price,
     .meat-price{
-        color: var(--highlight);
+        /* color: var(--highlight); */
+        font-weight: 300;
     }
     .meat-price{
-        font-weight: bold;
+        font-weight: 300;
     }
     .single-price{
         text-align: right;

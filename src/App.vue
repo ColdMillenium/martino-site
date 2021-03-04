@@ -80,11 +80,14 @@ html {
         align-items: center;
         justify-content: center;
         text-decoration: none;
+      
+        /* background-color: var(--highlight); */
+        color: var(--black);
         padding: 1em;
-        background-color: var(--highlight);
         width: 100px;
         border-radius: 3px;
         cursor: pointer;
+        border: 3px solid var(--highlight);
         box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     }
 .menu-btn:hover{
@@ -94,8 +97,9 @@ html {
     color: var(--highlight)
 }
 .menu-btn.selected{
-  background: rgb(255, 244, 97);
-  color: var(--highlight);
+  /* background: rgb(255, 244, 97); */
+  background: var(--highlight);
+  color: white;
   font-weight: bold;
 }
 </style>

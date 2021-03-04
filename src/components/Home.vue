@@ -325,12 +325,13 @@ section{
 .pizza-wing-combos{
  padding: 20px;
  /* background: url(../assets/img/woodTable.jpg); */
- background: var(--black);
+ /* background: var(--black); */
+ color: var(--black);
  background-size: cover;
 }
 .pizza-wing-combos
 .section-title{
-  color:white;
+   color: var(--black);
 }
 .pizza-wing-combo-list{
   display:grid;

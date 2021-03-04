@@ -97,7 +97,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   
-  background: url(./../assets/img/vintage3.jpg);
+  background: white;
 ;
   padding: 0 2em;
   z-index: 1000;

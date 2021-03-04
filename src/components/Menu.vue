@@ -275,48 +275,53 @@
             <div class="create-pizza-container">
                 <div class="create-pizza">
                     <div class="pizza-pricing">
-                        <div class="pizza-size-title">Pizza sizes</div>
+                        <div class="subtitle">Pizza sizes</div>
                         <div  
                                 v-for="(option, index) in options" 
                                 v-on:click="updateSelected(index)" 
                                 class="pizza-size-desc"
                                 :key="option"
                             >
-                                <div> <strong>{{option.size}}</strong></div>
-                               <div>  {{option.inches}}</div>
-                               <div>{{option.slices}} Slices</div>
+                                <div class="create-pizza-size"> <strong>{{option.size}}</strong></div>
+                               <div class="create-pizza-inches">  {{option.inches}}</div>
+                               <div class="create-pizza-slices">{{option.slices}} Slices</div>
                               
                         
                          </div>
-                         <div>Basic Tomato Sauce</div>
+                         <div class="subtitle">Basic Tomato Sauce</div>
                          <div  
                                 v-for="(tomatoSaucePrice, index) in tomatoSaucePrices" 
                                 :key="index"
+                                class="extra-price"
                             >
                                ${{tomatoSaucePrice}}
                          </div>
-                         <div>Additional Toppings</div>
+                         <div class="subtitle">Additional Toppings</div>
                          <div  
                                 v-for="(toppingPrice, index) in toppingPrices" 
                                 :key="index"
+                                class="extra-price"
                             >
                                ${{toppingPrice}}
                          </div>
 
                     </div>
                     <div class="calzone">
+                        <img class="calzone-pic" src="../assets/img/CreateYourOwn/calzone.jpg" alt="picture of delicious calzone">
                         <div class="calzone-info">
-                            <p>Calzone</p>
-                            <p>basic ssauce & cheese: $7.99</p>
-                            <p>any additional toppings: $1.10</p>
+                            <div class="calzone-title">Calzone</div>
+                            <div>basic ssauce & cheese</div>
+                            <div class="calzone-price">$7.99</div>
+                            <div>any additional toppings</div>
+                            <div class="calzone-price">$1.10</div>
                         </div>
                     
-                            <img class="calzone-pic" src="../assets/img/CreateYourOwn/calzone.jpg" alt="picture of delicious calzone">
+                            
                       
                        
                     </div>
                     <div class="toppings">
-                        <h2>Toppings</h2>
+                        <div class="toppings-title">Toppings</div>
                         <div class="toppings-list">
                             <div class="pizza-sauce">
                                 <div class="toppings-subtitle">Pizza Sauce</div>
@@ -356,10 +361,10 @@
                     </div>
                     <div class="wings-sizes">
                         <div class="wings-subtitle">Sizes</div>
-                        <div v-for="(wingSize, index) in wingSizes" class="wing-size" :key="index">
-                            <p>{{wingSize.lbs}} LBS</p>
-                            <p>{{wingSize.info}}</p>
-                            <p>${{wingSize.price}}</p>
+                        <div v-for="(wingSize, index) in wingSizes" class="wings-size" :key="index">
+                            <p class="wings-lbs">{{wingSize.lbs}} LBS</p>
+                            <p class="wings-info"><em>{{wingSize.info}}</em></p>
+                            <p class="wings-price">${{wingSize.price}}</p>
                         </div>
                     </div>
                     <div class="wings-sauces">
@@ -953,13 +958,13 @@
                     },
                     {
                         lbs:'5',
-                        info: '(+1lb Wings',
+                        info: '(+1lb Wings)',
                         price: '48.75'
                     }
                 ],
                 options: [
                         {
-                            size: "small",
+                            size: "Small",
                             slices: "6",
                             inches: "10''"
                         },
@@ -1095,7 +1100,7 @@
     .foodlist{
         
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr) ) ;
+        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr) ) ;
         gap: 50px;
         max-width: 1300px; 
         margin:auto;
@@ -1115,7 +1120,10 @@
         }
         .pizza-guide{
             width: 1300px;;
-            background: rgb(255, 255, 255);
+            /* background: rgb(255, 255, 255); */
+            background: url(../assets/img/specialPizza/Buffalo.jpg);
+            opacity: 0.2;
+            background-size: cover;
             margin:auto;
             color: var(--black);
             text-align: left;
@@ -1144,8 +1152,9 @@
         }
         .pizza-sizes{
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr ;
             gap: 5px;
+          
             
         }
         .pizza-size-desc{
@@ -1155,6 +1164,11 @@
         }
         .size{
             font-size: 32px;
+        }
+    
+        
+        .pizza-topping{
+            font-weight: 300;
         }
     /* ---------- Wings---------- */
         .wings{
@@ -1175,47 +1189,117 @@
         }
         .sauce{
             text-decoration: none;
+            font-weight: 300;
+        }
+        .wings-sizes{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .wings-lbs{
+            font-weight: bold;
+        }
+        .wings-info{
+            font-size: 14px;
+        }
+        .wings-price{
+            font-size: 18px;
+            font-weight: 300;
         }
 
     /* ---------- Create your own pizza---------- */
-    .create-pizza-container{
-        padding: 2em;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    }
+        .create-pizza-container{
+            margin: auto;
+            padding: 2em;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        }
+        .create-pizza .subtitle{
+                text-align: left;
+                font-size: 32px;
+                font-weight: 600;
+            }
+        .create-pizza-size{
+            font-weight: 400;
+
+        }
+        .create-pizza-inches{
+            font-size: 16px;
+            font-weight: 300;
+        }
+        .create-pizza-slices{
+            font-size: 16px;
+            font-weight: 300;
+        }
         .pizza-pricing{
             display: grid;
-            grid-template-columns: 6fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
             gap: 50px;
             align-items: center;
             justify-content: center;
-            width: 1300px;
+            max-width: 1300px;
             margin: auto;
             
+        }
+        .extra-price{
+            font-weight: 300;
+            font-size: 18px;
         }
         .pizza-option{
             display: flex;
             flex-direction: column;
         }
-        .pizza-size-title{
-            font-size: 24px;
-        }
-        .calzone-pic{
-            width: 300px;
-        }
-        .toppings-list{
-            display: flex;
-            justify-content: center;
-            max-width: 1300px;
-            margin: auto;
-            gap: 100px;
-            margin-top: 30px;
-        }
-        .toppings-subtitle{
-            font-size: 24px;
-            font-weight: 600;
-            font-family: 'Roboto';
+        
+        /* ------ Calzone ------ */
+            .calzone{
+                margin: 30px auto;
+                display: flex;
+                
+                
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+                width: 600px;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+            .calzone-pic{
+                width: 40%;
+            }
+            .calzone-info{
+                padding: 10px;
+                width: 60%;
+            }
+            .calzone-title{
+                font-weight: 600;
+                font-size: 36px;
+            }
+            .calzone-price{
+                font-size: 30px;
+                font-weight: 300;
+            }
+        /*------- Toppings ------ */
+            .topping{
+                background: grey;
+            }
+            .toppings-list{
+                display: flex;
+                justify-content: center;
+                max-width: 1300px;
+                margin: auto;
+                gap: 100px;
+                margin-top: 30px;
+            }
+            .toppings-subtitle{
+                font-size: 24px;
+                font-weight: 400;
+                font-family: 'Roboto';
 
-        }
+            }
+            .toppings-title{
+                font-size: 32px;
+                text-align: center;
+                margin: 0 auto;
+                font-weight: 600;
+            }
+            
 
 
         
