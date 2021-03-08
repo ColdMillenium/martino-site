@@ -11,6 +11,8 @@
 <style scoped>
     .footer{
         padding: 20px;
-        margin: 20px;
+        margin: 0px auto;
+        background: var(--black);
+        color: white;
     }
 </style>

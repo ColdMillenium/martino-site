@@ -1044,7 +1044,7 @@
         min-height: 150px;
     }
     .banner-background{
-        background: url(../assets/img/banner.jpg);
+        background: url(../assets/img/specialPizza/Primavera.jpg);
         background-size: cover;
         width: 100vw;
         height: 200px;
@@ -1120,9 +1120,9 @@
         }
         .pizza-guide{
             width: 1300px;;
-            /* background: rgb(255, 255, 255); */
-            background: url(../assets/img/specialPizza/Buffalo.jpg);
-            opacity: 0.2;
+            background: rgb(255, 255, 255);
+            /* background: url(../assets/img/specialPizza/Buffalo.jpg); */
+            
             background-size: cover;
             margin:auto;
             color: var(--black);

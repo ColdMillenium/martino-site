@@ -15,6 +15,7 @@
      
         <HeaderItem class="text" text="Home" linkTo="/Home"/>
         <HeaderItem class="text" text="Menu" linkTo="/Menu"/>
+        <HeaderItem class="text" text="About Us" linkTo="/AboutUs"/>
         
         <button v-on:click="toggleSideBar()" :class="buttonClass" id="toggle">
             <div class="line line1"></div>
@@ -36,6 +37,12 @@
           <div class="sideBar-item"
           >
             Menu
+            </div>
+      </router-link>
+      <router-link  style="text-decoration: none;" to="/AboutUs" >
+          <div class="sideBar-item"
+          >
+            About Us
             </div>
       </router-link>
     </div>
@@ -212,7 +219,7 @@ button.active .line3{
 /* -------------- SideBar  -------------- */
 .sideBar{
   height: 100vh;
-  background:url(../assets/img/vintage3.jpg);
+  background: white;
 ;
   position: fixed;
   width: 100vw;
@@ -231,6 +238,7 @@ button.active .line3{
   color: #2c3e50;
   font-size: 68px;
   font-weight: 600;
+  white-space: nowrap;
 }
 .sideBarActive{
     transform: translateX(0vw);
