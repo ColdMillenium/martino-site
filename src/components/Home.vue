@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
+  <div class="home-container">
  
     <section class="welcome">
-      <h1 class= "welcome-title1">Pizza & Asian </h1>
-      <h2 class="welcome-title2">Fusion Kitchen</h2>
+      <div class= "welcome-title1">Pizza & Asian </div>
+      <div class="welcome-title2">Fusion Kitchen</div>
       <Button class="welcome-btn" href="#order-now">Order Now!</Button>
     </section>
 
@@ -44,7 +44,7 @@
           </div>
          
         </div>
-      </div>
+        </div>
       </div>
      
     </section>
@@ -56,7 +56,7 @@
       
       <div class="classic-combo-desc">
         <img class="pasta-asian-img" src="../assets/img/PastaOrAsian.png" alt="Pasta and asian food">
-       <div class="desc1 "> <span>1 Pizza</span>with<span>3 toppings</span></div>
+       <div class="desc1 "> <span>1 Pizza</span> with <span>3 toppings</span></div>
        <div class="desc2">plus your choice of</div>
        <div class="desc3"><span>Pasta</span> or <span>Asian</span> Dish</div>
       </div>
@@ -131,8 +131,10 @@
             </div>
             <div class="delivery order-now-section">
               <div class="title">Delivery <i class="fas fa-car  order-now-icon"></i></div>
+              <a href="">
+                <img class="uber-eats-logo" src="../assets/img/uberEatsLogo.png" alt="">
+              </a>
               
-              <img class="uber-eats-logo" src="../assets/img/uberEatsLogo.png" alt="">
               <!-- <div class="desc"><strong>11:30am - 8:00pm</strong></div> -->
             </div>
           </div>
@@ -177,8 +179,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 section{
-  margin: 0;
+  margin-bottom: 100px;
 } 
 .section-title{
   position: relative;
@@ -200,16 +203,16 @@ section{
 } */
 
 .welcome-title1,
-.welcome-title2,
-.section-title{
-  /* text-shadow: 0px 4px 3px rgba(75, 75, 75, 0.4),
+.welcome-title2
+{
+  text-shadow: 0px 4px 3px rgba(75, 75, 75, 0.4),
                0px 8px 13px rgba(97, 97, 97, 0.1),
-               0px 18px 23px rgba(143, 143, 143, 0.1); */
+               0px 18px 23px rgba(143, 143, 143, 0.1);
 }
 /* ------------- WELCOME -------------*/
 .section-container{
   margin: auto;
-  max-width: 1200px;
+  max-width: 1098px;
 }
 .welcome{
   width:100%;
@@ -220,6 +223,7 @@ section{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin:0;
  
 }
 .welcome-title1{
@@ -242,6 +246,7 @@ section{
   margin: 20px;
   font-size: 24px;
   font-weight: 600;
+  border-radius: 3px;
 
 }
 /* ------------- Specials -------------*/
@@ -559,6 +564,7 @@ span{
   border: 3px solid #5fb709;
   border-radius: 3px;
   padding: 0 30px;
+  cursor: pointer;
 }
 .order-grid{
   display: grid;

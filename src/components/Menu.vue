@@ -5,8 +5,8 @@
         </div>
         <div class="filters">
            
-            <a class="filter-btn" href="#specialty-pizza">Specialty Pizza</a>
-            <a class="filter-btn" href="#create-pizza">Create your own Pizza</a>
+            
+            <!-- <a class="filter-btn" href="#create-pizza">Create your own Pizza</a>
             <a class="filter-btn" href="#wings">Wings</a>
             <a class="filter-btn" href="#pasta">Pasta</a>
             <a class="filter-btn" href="#vegetables">vegetables</a>
@@ -15,12 +15,19 @@
             <a class="filter-btn" href="#shrimp">shrimp</a>
             <a class="filter-btn" href="#chicken">chicken</a>
             <a class="filter-btn" href="#beef">beef</a>
-            <a class="filter-btn" href="#fried-rice">fried rice</a>
-           
+            <a class="filter-btn" href="#fried-rice">fried rice</a> -->
+           <a 
+           v-for="(foodGroup ) in foodGroups" 
+           v-on:click="section = foodGroup.sectionKey"
+           :key="foodGroup.sectionKey" 
+           :class="filterBtnClass(foodGroup.sectionKey)" 
+           >
+               {{foodGroup.name}}
+            </a>
 
         </div>
     
-        <section id="specialty-pizza">
+        <section v-if="section=='SP'"  id="specialty-pizza">
             <div class="section-title">~ Specialty Pizza ~</div>
             <div class="pizza-guide-container">
                 <div class="pizza-guide">
@@ -55,28 +62,37 @@
            
             <div class="foodlist">
                 <FoodItem
-                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    picUrl="../../assets/img/specialPizza/Primavera.jpg"
                     dishName="CLASSIC MARGHERITA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     veg="true"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Fresh Tomato, Basil, Parmesan Cheese, Spices, Ricotta Cheese."
-                />
+                 >
+                   
+                    <img  src="../assets/img/specialPizza/Primavera.jpg" alt="">
+                </FoodItem>
                 <FoodItem
-                    picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
+                    picUrl="../../assets/img/specialPizza/Primavera.jpg"
                     dishName="NAPLES GARLIC MARGHERITA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     veg="true"
                     :prices="['12.10', '16.10', '18.70', '23.30', '26.90', '30.80']"
                     desc = "Double Cheese, Spices, Garlic, Basil."
-                />
+                 >
+                   
+                    <img  src="../assets/img/specialPizza/NaplesGarlicMargherita.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="HOUSE SPECIAL"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Chicken, Bacon, Red Pepper, Sun Dried Tomatoes, Feta."
-                />
+                 >
+                   
+                    <img  src="../assets/img/specialPizza/HouseSpecial.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="WHITE PIZZA"
@@ -84,21 +100,30 @@
                     veg="true"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Olive Oil, Spices, Spinach, Tomato, Roasted Red Peppers, Garlic, Ricotta, Parmesan."
-                />
+                 >
+                   
+                    <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="SUPREME"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Fresh Tomato, Basil, Parmesan Cheese, Spices, Ricotta Cheese."
-                />
+                >
+                   
+                    <img  src="../assets/img/specialPizza/Supreme.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="BUFFALO"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['13.65', '18.15', '20.95', '25.95', '29.95', '34.15']"
                     desc = "Mushrooms, Onions, Chicken, Gorgonzola."
-                />
+                 >
+                   
+                    <img  src="../assets/img/specialPizza/Buffalo.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="PRIMAVERA"
@@ -106,14 +131,20 @@
                     veg="true"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Spinach, Red Peppers, Eggplant, Zucchini, Mushrooms."
-                />
+                 >
+                   
+                    <img  src="../assets/img/specialPizza/Primavera.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="DIAVOLA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['13.65', '18.15', '20.95', '25.95', '29.95', '34.15']"
                     desc = "Sausage, Onions, Hot Peppers, Mushrooms."
-                />
+                 >
+                   
+                    <img  src="../assets/img/specialPizza/Diavola.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="MEDITERRANEAN"
@@ -121,14 +152,20 @@
                     veg="true"
                     :prices="['16.75', '22.25', '25.45', '31.25', '36.05', '40.85']"
                     desc = "Spinach, Feta, Tomatoes, Onions, Black Olives, Parmesan."
-                />
+                 >
+                   
+                    <img  src="../assets/img/specialPizza/Mediterranean.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="BACON CHEESE BURGER PIZZA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['13.65', '18.15', '20.95', '25.95', '29.95', '34.15']"
                     desc = "Ground Beef, Onions, Bacon, Cheddar."
-                />
+                 >
+                   
+                    <img  src="../assets/img/specialPizza/BaconCheeseBurgerPizza.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="GREEK"
@@ -136,14 +173,20 @@
                     veg="true"
                     :prices="['13.65', '18.15', '20.95', '25.95', '29.95', '34.15']"
                     desc = "Feta, Black Olives, Tomatoes, Onions."
-                />
+                 >
+                   
+                    <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="BBQ SAUCE PIZZA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Fresh Tomato, Basil, Parmesan Cheese, Spices, Ricotta Cheese."
-                />
+                 >
+                   
+                    <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="SPINACH PIZZA"
@@ -151,21 +194,30 @@
                     veg="true"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Spinach, Goat Cheese, Cashew Nuts, Onions, Roasted Red Peppers."
-                />
+                 >
+                   
+                    <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="CALIFORNIA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Pesto Sauce, Sausage, Onions, Roasted Red Peppers, Oregano, Parmesan."
-                />
+                 >
+                   
+                    <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="CHICKEN PESTO"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Chicken, Artichoke, Pesto, Roasted Red Peppers, Roasted Garlic, Parmesan."
-                />
+                 >
+                   
+                    <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="COMBINATION"
@@ -173,14 +225,20 @@
                     veg="true"
                     :prices="['16.75', '22.25', '25.45', '31.25', '36.05', '40.85']"
                     desc = "Pesto, Tomato sauce, Onions, Tomatoes, Artichoke, Ricotta, Black Olives"
-                />
+                 >
+                   
+                    <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="SUPER MEAT"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Pepperoni, Bacon, Ground Beef, Sausages, Ham."
-                />
+                 >
+                   
+                    <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="SUPER VEGGIE"
@@ -188,42 +246,60 @@
                     veg="true"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Green Peppers, Tomatoes, Mushrooms, Green Olives, Onions."
-                />
+                 >
+                   
+                    <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="CLASSIC MARGHERITA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Fresh Tomato, Basil, Parmesan Cheese, Spices, Ricotta Cheese."
-                />
+                 >
+                   
+                    <img  src="../assets/img/specialPizza/ClassicMargherita.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="SUPER DELUXE"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['16.75', '22.25', '25.45', '31.25', '36.05', '40.85']"
                     desc = "Pepperoni, Mushrooms, Tomato, Green Peppers, Onions, Bacon."
-                />
+                 >
+                   
+                    <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="SOPPRESSATA PIZZA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['16.75', '22.25', '25.45', '31.25', '36.05', '40.85']"
                     desc = "Soppressata, Sautéed Onions, Tomatoes, Parmesan, Roasted garlic, Pesto Sauce."
-                />
+                 >
+                   
+                    <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="CLASSIC MARGHERITA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Fresh Tomato, Basil, Parmesan Cheese, Spices, Ricotta Cheese."
-                />
+                 >
+                   
+                   
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="BACON CLUB"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Double Pepperoni, Double Bacon, Mushrooms."
-                />
+                 >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="PIZZA QUATRO STAGIONI"
@@ -231,46 +307,64 @@
                     veg="true"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Artichokes, Tomatoes, Soppressata, Prosciutto, Mushrooms."
-                />
+                 >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="GENERAL TAO’S PIZZA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['15.20', '20.20', '23.20', '28.60', '33.00', '37.50']"
                     desc = "Sweet and Sour Chicken, Onion, Green & Red Peppers."
-                />
+                 >
+                   
+                   <img  src="../assets/img/specialPizza/GeneralTaoPizza.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="DUPONT STRIP PIZZA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['12.10', '16.10', '18.70', '23.30', '26.90', '30.80']"
                     desc = "Pepperoni, Mushroom, Green Olives."
-                />
+                 >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="MARTINO’S TROPICAL PIZZA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['12.10', '16.10', '18.70', '23.30', '26.90', '30.80']"
                     desc = "Pepperoni, Bacon, Pineapple."
-                />
+                 >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="ALFREDO PIZZA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['18.30', '24.30', '27.70', '33.90', '39.10', '44.20']"
                     desc = "Cream, Parmesan, Chicken, Bacon, Mushroom, Onion, Spinach"
-                />
+                 >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
                 <FoodItem
                     picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                     dishName="RED CURRY CHICKEN PIZZA"
                     :meats="['S', 'M', 'L', 'XL', 'F', 'P']"
                     :prices="['16.75', '22.25', '25.45', '31.25', '36.05', '40.85']"
                     desc = "Red Curry Sauce, Chicken, Red & Green Peppers, Onion, Pineapple, Thai Basil, Lime Leaf."
-                />
+                 >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
             
             </div>
         </section>
-        <section id="create-pizza">
+        <section v-else-if="section=='CP'" id="create-pizza">
             <div class="section-title">Create your own Pizza</div>
             <div class="create-pizza-container">
                 <div class="create-pizza">
@@ -352,7 +446,7 @@
                 </div>
             </div>
         </section>
-        <section  id="wings">
+        <section v-else-if="section=='W'" id="wings">
             <div class="section-title">Wings</div>
             <div class="wings-container">
                 <div class="wings">
@@ -377,7 +471,7 @@
                 </div>
             </div>
         </section>
-        <section  id="pasta">
+        <section v-else-if="section=='P'" id="pasta">
             <div class="section-title">Pasta</div>
             <div class="foodlist">
             <FoodItem
@@ -385,54 +479,78 @@
                 dishName="PASTA POMODORO"
                 :prices="[9.07]"
                 desc = "Pasta in tomato sauce with fresh basil and parmesan cheese."
-            />
+             >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="PENNE GARLIC SAUCE"
                 :prices="[12.85]"
                 desc = "Grilled Chicken with Mixed Seasonal Vegetables in garlic Olive Oil."
-            />
+             >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="PENNE ALLA VODKA"
                 :prices="[12.85]"
                 desc = "Cut bacon in Rose Sauce."
-            />
+             >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="SPAGHETTI MEATBALL"
                 :prices="[12.85]"
                 desc = "Spaghetti and Italian meatballs."
-            />
+             >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="SPAGHETTI VEGGIE"
                 :prices="[12.85]"
                 desc = "Broccoli, zucchini, eggplant, mushroom, onions."
-            />
+             >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="PENNE ALLA CACCIATORA"
                 :prices="[13.85]"
                 desc = "Chicken, onions, mushroom, roasted red peppers in Rose sauce."
-            />
+             >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="SPAGHETTI PUTTANESCA"
                 :prices="[12.85]"
                 desc = "Anchovies, black olive, mushroom, Jalapeno, garlic, parsley, onions in tomato sauce."
-            />
+            >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="PENNE CHICKEN & SPINACH"
                 :prices="[13.85]"
                 desc = "Chicken & Spinach in Tomato Sauce."
-            />
+             >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
             </div>
             
             
         </section>
-        <section id="vegetables">
+        <section v-else-if="section=='Vg'" id="vegetables">
             <div class="section-title">Vegetables</div>
             <div class="foodlist">
             <FoodItem
@@ -440,58 +558,85 @@
                 dishName="VEGETABLE SPRING ROLLS (2 Rolls)"
                 :prices="[2.65]"
                 desc = "Golden Fried Vegetarian Spring Rolls served with sweet & sour plum sauce."
-            />
+             >
+                   
+                   <img  src="../assets/img/Vegetables/vegSpringRoll.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="THAI EGGPLANT"
                 :prices="[12.85]"
                 desc = "Stir-fried eggplant in oyster sauce with basil leaf."
-            />
+             >
+                   
+                   <img  src="../assets/img/Vegetables/thaiEggplant.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="MIXED VEGETABLES"
                 :prices="[11.95]"
                 desc = "Stir-fried vegetables with snow peas, mushroom, broccoli in garlic sauce."
-            />
+             >
+                   
+                   <img  src="../assets/img/Vegetables/mixVeg.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="RED CURRY VEGETABLES"
                 :prices="[12.85]"
                 desc = "Vegetables with tofu and red curry in coconut milk sauce."
-            />
+             >
+                   
+                   <img  src="../assets/img/Vegetables/redCurry.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="GREEN CURRY VEGETABLES"
                 :prices="[12.85]"
                 desc = "Vegetables with tofu and green curry in coconut milk sauce."
-            />
+            >
+                   
+                   <img  src="../assets/img/Vegetables/greenCurry.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="BASIL TOFU"
                 :prices="[11.95]"
                 desc = "Stir-fried tofu in oyster sauce with basil leaf."
-            />
+             >
+                   
+                   <img  src="../assets/img/Vegetables/basilTofu.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="SPICY COCONUT VEGETABLES"
                 :prices="[12.85]"
                 desc = "Stir-fried vegetables with snow peas, mushroom, broccoli, and coconut sauce"
-            />
+             >
+                   
+                   <img  src="../assets/img/Vegetables/spicyCoconut.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="VEGETABLES IN BLACK BEAN SAUCE"
                 :prices="[11.95]"
                 desc = "Stir-fried vegetables with Black Bean Sauce."
-            />
+             >
+                   
+                   <img  src="../assets/img/Vegetables/vegBlackBean.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="MAPO TOFU"
                 :prices="[11.95]"
                 desc = "Tofu stir fried in chilli oyster sauce."
-            />
+             >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
             </div>
         </section>
-        <section  id="noodles">
+        <section  v-else-if="section=='N'" id="noodles">
             <div class="section-title">Noodles</div>
             <div class="foodlist">
             <FoodItem
@@ -500,53 +645,74 @@
                 :meats="['veggie', 'chicken', 'beef', 'shrimp']"
                 :prices="[11.95, 11.95, 11.95, 11.95]"
                 desc = "Rice noodle, tofu, eggs in tamarind and tomato sauce with roasted peanuts, bean sprouts and green onions."
-            />
+             >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="THAI SPICY NOODLE"
                 :meats="['veggie', 'chicken', 'beef', 'shrimp']"
                 :prices="[11.95, 11.95, 11.95, 11.95]"
                 desc = "Rice noodle with chilli, basil leaves and vegetables."
-            />
+             >
+                   
+                   <img  src="../assets/img/Noodle/thaiSpicyNoodle.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="GLASS NOODLE"
                 :meats="['veggie', 'chicken', 'beef', 'shrimp']"
                 :prices="[11.95, 11.95, 11.95, 11.95]"
                 desc = "Transparent bean noodle with egg, and vegetables."
-            />
+             >
+                   
+                   <img  src="../assets/img/Noodle/glassNoodle.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="SHANGHAI NOODLE"
                 :meats="['veggie', 'chicken', 'beef', 'shrimp']"
                 :prices="[11.95, 11.95, 11.95, 11.95]"
                 desc = "Shanghai noodles, and cabbage are flavoured with hoisin sauce"
-            />
+             >
+                   
+                   <img  src="../assets/img/Noodle/shanghaiNoodle.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="STIR-FRIED PHO NOODLE"
                 :meats="['veggie', 'chicken', 'beef', 'shrimp']"
                 :prices="[11.95, 11.95, 11.95, 11.95]"
                 desc = "Flat rice noodle with green and red peppers, onions, bean sprout in garlic sauce."
-            />
+             >
+                   
+                   <img  src="../assets/img/Noodle/stirFryPhoNoodle.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="CHOW MEIN"
                 :meats="['veggie', 'chicken', 'beef', 'shrimp']"
                 :prices="[11.95, 11.95, 11.95, 11.95]"
                 desc = "Stir-fried egg noodle with vegetables."
-            />
+             >
+                   
+                   <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+                </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="CURRY PAD THAI"
                 :meats="['veggie', 'chicken', 'beef', 'shrimp']"
                 :prices="[11.95, 11.95, 11.95, 13.95]"
                 desc = "Thai rice noodle, tofu, eggs in coconut sauce with peanuts, bean sprouts, and green onions."
-            />
+             >
+                   
+                   <img  src="../assets/img/Noodle/curryPadThaiNoodle.jpg" alt="">
+                </FoodItem>
             </div>
 
         </section>
-        <section  id="verm">
+        <section v-else-if="section=='Vm'" id="verm">
             <div class="section-title">Vermecelli</div>
             <div class="foodlist">
             <FoodItem
@@ -555,17 +721,23 @@
                 :meats="['veggie', 'chicken', 'beef', 'shrimp']"
                 :prices="[11.95, 11.95, 11.95, 12.85]"
                 desc = "Thin rice noodle with vegetables, onions, bean sprouts in a yellow curry sauce"
-            />
+             >
+                   
+                   <img  src="../assets/img/Vermicelli/singaporeVerm.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="STIR-FRIED VERMICELLI"
                 :meats="['veggie', 'chicken', 'beef', 'shrimp']"
                 :prices="[11.95, 11.95, 11.95, 12.85]"
                 desc = "Vermicelli noodle with green and red peppers, onions, bean sprout in garlic sauce."
-            />
+             >
+                   
+                   <img  src="../assets/img/Vermicelli/stirFriedVerm.jpg" alt="">
+                </FoodItem>
             </div>
         </section>
-        <section id="shrimp">
+        <section v-else-if="section=='S'" id="shrimp">
             <div class="section-title">Shrimp</div>
             <div class="foodlist">
             <FoodItem
@@ -573,46 +745,60 @@
                 dishName="BASIL SHRIMP"
                 :prices="[13.85]"
                 desc = "Stir-fried shrimp with garlic, onion, and basil leaves"
-            />
+            > 
+                <img  src="../assets/img/shrimp/basilShrimp.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="GARLIC SHRIMP"
                 :prices="[13.85]"
                 desc = "Stir-fried shrimp with vegetables in a garlic sauce"
-            />
+            > 
+                <img  src="../assets/img/shrimp/garlicShrimp.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="GREEN CURRY SHRIMP"
                 :prices="[13.85]"
                 desc = "Shrimp in Green curry sauce, coconut milk and vegetables"
-            />
+            > 
+                <img  src="../assets/img/shrimp/greenCurryShrimp.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="RED CURRY SHRIMP"
                 :prices="[13.85]"
                 desc = "Shrimp in Red curry sauce, coconut milk and vegetables"
-            />
+            > 
+                <img  src="../assets/img/shrimp/redCurryShrimp.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="COCONUT ROSE SHRIMP"
                 :prices="[13.85]"
                 desc = "Shrimp served in Coconut Rose Sauce on rice"
-            />
+            > 
+                <img  src="../assets/img/shrimp/CoconutroseShrimp.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="THAI EGGPLANT SHRIMP"
                 :prices="[13.85]"
                 desc = "Stir-fried shrimp with eggplant and onion"
-            />
+            > 
+                <img  src="../assets/img/shrimp/ThaiEggplantShrimp.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="VEGETABLE SPRING ROLLS (2 Rolls)"
                 :prices="[2.65]"
                 desc = "Golden Fried Vegetarian Spring Rolls served with sweet & sour plum sauce."
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             </div>
         </section>
-        <section  id="chicken">
+        <section v-else-if="section=='C'"  id="chicken">
             <div class="section-title">Chicken</div>
             <div class="foodlist">
             <FoodItem
@@ -620,94 +806,124 @@
                 dishName="CASHEW NUT CHICKEN"
                 :prices="[12.85]"
                 desc = "Chicken with roasted cashew nuts, sweet peppers and onions"
-            />
+            > 
+                <img  src="../assets/img/chicken/cashewNutChicken.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="BASIL CHICKEN"
                 :prices="[11.95]"
                 desc = "Stir-fried chicken with basil leaves, garlic and peppers"
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="GINGER CHICKEN"
                 :prices="[11.95]"
                 desc = "Stir-fried chicken with shredded ginger, broccoli, red and green peppers"
-            />
+            > 
+                <img  src="../assets/img/chicken/gingerChicken.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="GREEN CURRY CHICKEN"
                 :prices="[12.85]"
                 desc = "Green curry with chicken, fresh basil, coconut milk and veggies"
-            />
+            > 
+                <img  src="../assets/img/chicken/greenCurryChicken.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="RED CURRY CHICKEN"
                 :prices="[12.85]"
                 desc = "Red curry with chicken, fresh basil, coconut milk and veggies"
-            />
+            > 
+                <img  src="../assets/img/chicken/RedCurryChicken.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="SWEET & SOUR CHICKEN"
                 :prices="[11.95]"
                 desc = "Lightly stir-fried chicken with green and red peppers, pineapples and onions"
-            />
+            > 
+                <img  src="../assets/img/chicken/SweetSourChicken.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="GENERAL TAO’S CHICKEN"
                 :prices="[11.95]"
                 desc = "Stir-fried chicken pieces in a sweet and spicy sauce"
-            />
+            > 
+                <img  src="../assets/img/chicken/genTaoChicken.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="CHILLI LEMONGRASS CHICKEN"
                 :prices="[12.85]"
                 desc = "Stir-fried chicken with lemongrass and chilli peppers"
-            />
+            > 
+                <img  src="../assets/img/chicken/chilliLemChicken.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="THAI EGGPLANT CHICKEN"
                 :prices="[12.85]"
                 desc = "Stir-fried chicken with eggplant and onions"
-            />
+            > 
+                <img  src="../assets/img/chicken/ThaiEggplantChicken.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="COCONUT ROSE SAUCE w/ CHICKEN"
                 :prices="[12.85]"
                 desc = "Chicken served with Coconut Rose Sauce on rice."
-            />
+            > 
+                <img  src="../assets/img/chicken/coconutRoseChicken.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="VEGETABLES w/ CHICKEN"
                 :prices="[11.95]"
                 desc = "Chicken served with stir-fried mixed vegetables."
-            />
+            > 
+                <img  src="../assets/img/chicken/VegChicken.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="CHICKEN w/ BROCCOLI"
                 :prices="[12.85]"
                 desc = "Stir-fried chicken with broccoli in salty black bean sauce."
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="MAPO TOFU w/ CHICKEN"
                 :prices="[11.95]"
                 desc = "Chicken & tofu stir fried with chilli and oyster sauce."
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="CHICKEN w/ SAUTEED MUSHROOM"
                 :prices="[12.85]"
                 desc = "Stir-fried beef with mushrooms in salty black bean sauce."
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="CHICKEN, TOMATO, & PINEAPPLE"
                 :prices="[12.85]"
                 desc = "Onion, Green pepper, red pepper, pineapple, and tomato in hoisin and oyster sauce."
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             </div>
         </section>
-        <section  id="beef">
+        <section v-else-if="section==='B'" id="beef">
             <div class="section-title">Beef</div>
             <div class="foodlist">
             <FoodItem
@@ -715,70 +931,92 @@
                 dishName="BEEF w/ SAUTEED MUSHROOMS"
                 :prices="[12.85]"
                 desc = "Stir-fried beef with mushrooms in salty black bean sauce"
-            />
+            > 
+                <img  src="../assets/img/beef/beefMushroom.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="BEEF & BROCCOLI"
                 :prices="[12.85]"
                 desc = "Stir-fried beef with broccoli in salty black bean sauce"
-            />
+            > 
+                <img  src="../assets/img/beef/beefBroccoli.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="BASIL BEEF"
                 :prices="[11.95]"
                 desc = "Stir-fried beef with garlic, onions, green and red peppers"
-            />
+            > 
+                <img  src="../assets/img/beef/basilBeef.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="GREEN CURRY BEEF"
                 :prices="[12.85]"
                 desc = "Beef in a green curry, basil, coconut milk and vegetables"
-            />
+            > 
+                <img  src="../assets/img/beef/greenCurryBeef.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="RED CURRY BEEF"
                 :prices="[12.85]"
                 desc = "Beef in a red curry sauce, coconut milk, vegetables."
-            />
+            > 
+                <img  src="../assets/img/beef/redCurryBeef.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="BEEF w/ BLACK PEPPER SAUCE"
                 :prices="[13.85]"
                 desc = "Stir-fried beef with garlic and black pepper sauce and onions."
-            />
+            > 
+                <img  src="../assets/img/beef/beefBlackPepper.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="CHILLI LEMONGRASS BEEF"
                 :prices="[12.85]"
                 desc = "Stir-fried beef with lemongrass and chilli sauce"
-            />
+            > 
+                <img  src="../assets/img/beef/ChilliLemBeef.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="THAI EGGPLANT BEEF"
                 :prices="[12.85]"
                 desc = "Stir-Fried Beef with eggplant and onion and basil"
-            />
+            > 
+                <img  src="../assets/img/beef/ThaiEggplantBeef.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="VEGETABLES w/ BEEF"
                 :prices="[11.95]"
                 desc = "Beef served with stir-fried mixed vegetables"
-            />
+            > 
+                <img  src="../assets/img/beef/VegBeef.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="BEEF, TOMATO, AND PINEAPPLE"
                 :prices="[12.85]"
                 desc = "Onion, Green pepper, red pepper, pineapple, and tomato in hoisin and oyster sauce"
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="MAPO TOFU w/ BEEF"
                 :prices="[11.95]"
                 desc = "Beef & tofu stir fried with chilli and oyster sauce."
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             </div>
         </section>
-        <section  id="fried-rice">
+        <section v-else-if="section=='FR'"  id="fried-rice">
             <div class="section-title">Fried Rice</div>
             <div class="foodlist">
                 
@@ -788,58 +1026,76 @@
                 dishName="QUARTER CHICKEN LEG DINNER"
                 :prices="[12.85]"
                 desc = "Delicious fried chicken leg served on fried rice, coleslaw, and sweet & sour sauce."
-            />
+            > 
+                <img  src="../assets/img/FriedRice/QtrChickenLeg.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="EGG FRIED RICE"
                 :prices="[9.07]"
                 desc = "Fried rice served with extra egg."
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="FRIED RICE"
                 :meats="['veggie', 'chicken', 'beef', 'shrimp']"
                 :prices="[11.95, 11.95, 11.95, 12.85]"
                 desc = "Regular fried rice served with your choice of meats."
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="BASIL FRIED RICE"
                 :meats="['veggie', 'chicken', 'beef', 'shrimp']"
                 :prices="[12.85, 12.85, 12.85, 13.85]"
                 desc = "Stir-fried spicy rice with onions and basil leaves"
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="STIR-FRIED VERMICELLI"
                 :meats="['veggie', 'chicken', 'beef', 'shrimp']"
                 :prices="[11.95, 11.95, 11.95, 13.85]"
                 desc = "Vermicelli noodle with green and red peppers, onions, bean sprout in garlic sauce."
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="CURRY FRIED RICE"
                 :prices="[14.60]"
                 desc = "Stir-fried rice with yellow curry sauce served with your choice of meats."
-            />
+            > 
+                <img  src="../assets/img/FriedRice/curryFriedRice.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="MARTINO FRIED RICE"
                 :prices="[12.85]"
                 desc = "Chicken, Black Forest Ham with specialty sauce."
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="BACON FRIED RICE"
                 :prices="[12.85]"
                 desc = "Fried rice served with delicious bacon"
-            />
+            > 
+                <img  src="../assets/img/FriedRice/BaconFriedRice.jpg" alt="">
+            </FoodItem>
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
                 dishName="MUSHROOM FRIED RICE"
                 :prices="[11.95]"
                 desc = "Fried rice served with Mushrooms"
-            />
+            > 
+                <img  src="../assets/img/imgToBeAdded.jpg" alt="">
+            </FoodItem>
             </div>
             
         </section>
@@ -879,6 +1135,53 @@
        
         data(){
             return{
+                section: 'SP',
+                foodGroups: [
+                    {
+                        name:'Specialty Pizza',
+                        sectionKey: 'SP'
+                    },
+                    {
+                        name:'Create your own Pizza',
+                        sectionKey: 'CP'
+                    },
+                    {
+                        name:'Wings',
+                        sectionKey: 'W'
+                    },
+                    {
+                        name:'Pasta',
+                        sectionKey: 'P'
+                    },
+                    {
+                        name:'Vegetables',
+                        sectionKey: 'Vg'
+                    },
+                    {
+                        name:'Noodles',
+                        sectionKey: 'N'
+                    },
+                    {
+                        name:'Vermecelli',
+                        sectionKey: 'Vm'
+                    },
+                    {
+                        name:'Shrimp',
+                        sectionKey: 'S'
+                    },
+                    {
+                        name:'Chicken',
+                        sectionKey: 'C'
+                    },
+                    {
+                        name:'Beef',
+                        sectionKey: 'B'
+                    },
+                    {
+                        name:'Fried Rice',
+                        sectionKey: 'FR'
+                    },
+                ],
                 filters:{
                     "all": true,
                     "pasta": false,
@@ -1010,6 +1313,7 @@
         inches(){
             return this.options[this.selected].inches;
         },
+        
     },
     methods:{
         updateSelected(index){
@@ -1021,13 +1325,24 @@
             }else{
                 return "menu-btn"
             }
+        },
+        changeSection(key){
+            this.section = key;
+        },
+        filterBtnClass(key){
+            if(this.section == key){
+                return 'filter-btn active'
+            }else{
+                return 'filter-btn'
+            }
         }
+        
     },
         mounted (){
             console.log('mounted bitch');
             fadeInElements = Array.from(document.getElementsByClassName('fade-in'));
-            window.addEventListener('scroll', handleScroll)
-            handleScroll();
+            // window.addEventListener('scroll', handleScroll)
+            // handleScroll();
         },
         destroyed(){
             window.removeEventListener('scroll', handleScroll)
@@ -1074,14 +1389,19 @@
         
         color:var(--highlight);
         font-family: Roboto;
-        
-        
+        cursor:pointer;   
+        transition: 0.3s ease;
     }
     .filter-btn:link:active, 
     .filter-btn:visited:active{
         font-weight: bold;
         transform: scale(1.05)
     } 
+    .filter-btn.active{
+        background: var(--highlight);
+        color: white;
+        font-weight: bold;
+    }
     section{
  
      padding-top: 100px; 
@@ -1107,12 +1427,12 @@
         justify-items: center;
         /* align-items: center; */
     }
-    .fade-in {
+    /* .fade-in {
         
         opacity: 0;
         transition: 0.3s all ease-out;
         transform:  scale(0.8);
-    }
+    } */
     /* ---------- Specialty Pizza---------- */
         .pizza-guide-container{
             background: white;

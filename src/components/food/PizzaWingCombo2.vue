@@ -32,33 +32,33 @@ export default {
             selected: 0,
             options: [
                     {
-                    size: "small",
+                    size: "Small",
                     chicken: "1",
                     price: "19.65"
                 },
                 {
                     
-                    size: "medium",
+                    size: "Medium",
                     chicken: "1",
                     price: "23.25"
                 },
                 {
-                    size: "large",
+                    size: "Large",
                     chicken: "1.5",
                     price: "29.95"
                 },
                 {
-                    size: "x-large",
+                    size: "X-large",
                     chicken: "2",
                     price: "38.49"
                 },
                 {
-                    size: "family",
+                    size: "Family",
                     chicken: "2.5",
                     price: "41.79"
                 },
                 {
-                    size: "party",
+                    size: "Party",
                     chicken: "3",
                     price: "54.05"
                 },

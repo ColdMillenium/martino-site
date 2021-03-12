@@ -1,7 +1,8 @@
 <template>
 
     <div class="container fade-in">
-        <img :src="picUrl" :alt="'picture of ' + dishName + 'meal'">
+        
+        <slot></slot>
        
         <div v-if="prices.length>1" class="meal-text">
             <div class="meal-header"><h2 class="dish-name">
@@ -29,7 +30,7 @@
 
 </template>
 
-<script>
+<script scoped>
 export default {
     name:"FoodItem",
     props:{
@@ -46,13 +47,14 @@ export default {
     },
     data (){
         return {
-           
+           image: require(`${this.picUrl}`)
         }
     },
     computed:{
         testData(){
             return this.prices
         },
+       
     }
 
 }
@@ -104,6 +106,7 @@ export default {
         font-style: italic;
         font-weight: 600;
         overflow: wrap;
+        color: green;
     }
     .price-options{
         display:flex;

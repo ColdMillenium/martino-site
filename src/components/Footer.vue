@@ -10,9 +10,12 @@
 </script>
 <style scoped>
     .footer{
+        display: flex;
         padding: 20px;
-        margin: 0px auto;
+        justify-content: center;
+        align-items: center;;
         background: var(--black);
         color: white;
+        height: 50px;
     }
 </style>

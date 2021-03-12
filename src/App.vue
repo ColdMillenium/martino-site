@@ -43,17 +43,33 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Amatic+SC:wght@400;700&family=Fascinate&family=Oi&family=Oswald:wght@400;500;600&family=Roboto+Condensed:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Amatic+SC:wght@400;700&family=Fascinate&family=Oi&family=Oswald:wght@400;500;600&family=Roboto+Condensed:ital,wght@0,300;1,300&display=swap');
+
 :root{
     --black: #2c3e50;
     --highlight:  rgb(202, 53, 53);
 }
 #app {
-  font-family: Ubuntu;
+  font-family:  'Oswald';
   text-align: center;
   color: var(--black);
 }
+section{
+  margin:0;
+  
+} 
+.section-title{
+  position: relative;
+  font-size: 60px;
+  font-weight: 600;
+  width: fit-content;
+  margin: 3rem auto;
+ 
+}
 p{
-  font-family: Roboto;
+  font-family: 'Roboto';
 }
 h1{
 
@@ -67,6 +83,7 @@ body, h1, h2, h3{
   width: 100vw;
   overflow-x: hidden;
   color: #2c3e50;
+  min-height: 100%;
 }
 *{
   box-sizing: border-box;

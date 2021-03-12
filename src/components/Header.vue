@@ -6,7 +6,7 @@
       </router-link>
      
       <div class="text">
-        <em> Dupont Street, Toronto</em> 
+        <em> 178 Dupont Street, Toronto</em> 
       </div>
     <div class="text">|</div>
     <div class="text"><em>416 - 929 - 6000</em></div>
@@ -49,7 +49,7 @@
   </div>
 </template>
 
-<script>
+<script scoped>
 import HeaderItem from './HeaderItem.vue'
 
 export default {
