@@ -12,7 +12,6 @@
     <div class="text"><em>416 - 929 - 6000</em></div>
     </div>
     <div class="right">
-     
         <HeaderItem class="text" text="Home" linkTo="/Home"/>
         <HeaderItem class="text" text="Menu" linkTo="/Menu"/>
         <HeaderItem class="text" text="About Us" linkTo="/AboutUs"/>
@@ -27,24 +26,33 @@
       
     </div>
     <div ref="sideBar" :class="sideBarClass" >
-       <router-link  style="text-decoration: none;" to="/Home" >
-          <div class="sideBar-item"
-          >
-            Home
-          </div>
-      </router-link>
-      <router-link  style="text-decoration: none;" to="/Menu" >
-          <div class="sideBar-item"
-          >
-            Menu
+      <div v-on:click="toggleSideBar()">
+        <router-link style="text-decoration: none;" to="/Home" >
+            <div class="sideBar-item"
+            >
+              Home
             </div>
-      </router-link>
-      <router-link  style="text-decoration: none;" to="/AboutUs" >
-          <div class="sideBar-item"
-          >
-            About Us
-            </div>
-      </router-link>
+        </router-link>
+      </div>
+       
+      <div v-on:click="toggleSideBar()">
+        <router-link  style="text-decoration: none;" to="/Menu" >
+            <div class="sideBar-item"
+            >
+              Menu
+              </div>
+        </router-link>
+      </div>
+
+      <div v-on:click="toggleSideBar()">>
+        <router-link  style="text-decoration: none;" to="/AboutUs" >
+            <div class="sideBar-item"
+            >
+              About Us
+              </div>
+        </router-link>
+      </div>
+
     </div>
   </div>
 </template>
