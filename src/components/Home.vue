@@ -224,6 +224,7 @@ section{
   justify-content: center;
   align-items: center;
   margin:0;
+  min-height: 450px;
  
 }
 .welcome-title1{
@@ -580,6 +581,13 @@ span{
   font-size: 300px;
   font-weight: bold;
   height: 500px;
+}
+@media  screen and (max-width: 600px) {
+  .order-content{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 
