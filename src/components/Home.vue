@@ -131,7 +131,7 @@
             </div>
             <div class="delivery order-now-section">
               <div class="title">Delivery <i class="fas fa-car  order-now-icon"></i></div>
-              <a href="">
+              <a href="https://www.ubereats.com/toronto/food-delivery/martino-pizza-%2526-asian-fusion-kitchen/daMPWIR7QbaQLUImKv9LIw">
                 <img class="uber-eats-logo" src="../assets/img/uberEatsLogo.png" alt="">
               </a>
               
@@ -344,7 +344,6 @@ section{
    background: url(./../assets/img/ClassicPizzaBackground.png);
    background-size: cover;
    border-radius: 3px;
-   padding: 20px;
    color: white;
    /* background: url(./../assets/img/vintage3.jpg); */
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
@@ -454,14 +453,31 @@ span{
   
   /* border: 3px solid var(--highlight); */
   padding: 0.5em 1.5em;
-  border-radius: 5px
+  border-radius: 5px;
+     filter: drop-shadow(4px 2px 3px rgba(0, 0, 0, 0.7));
+
 }
 .classic-price{
   font-weight: 600;
   font-size: 36px;
-   filter: drop-shadow(4px 2px 3px rgba(0, 0, 0, 0.7));
 }
-
+@media  screen and (max-width: 1000px) {
+ .classic-combo-prices{
+   justify-content: center;
+ }
+ .classic-combo-price{
+   padding: 1em;
+ }
+}
+@media  screen and (max-width: 640px) {
+ .classic-combo-prices{
+   flex-wrap: wrap;
+ }
+ .classic-combo-price{
+   flex: 34%;
+   margin: 0;
+ }
+}
 
 
 
