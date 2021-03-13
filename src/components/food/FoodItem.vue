@@ -70,7 +70,9 @@ export default {
         overflow: hidden;
         border-radius: 5px;
         
+        margin: 10px;
     }
+    
     img{
         width: 30%;
     }
@@ -143,5 +145,23 @@ export default {
     }
     .single-price{
         text-align: right;
+    }
+    @media  (max-width: 640px) {
+      
+       .container{
+           width: calc(100vw - 20px);
+           /* background:blue; */
+           margin: 10px;
+           height: fit-content;
+       }
+       .dish-name{
+           font-size: 16px;
+       }
+       .price-options{
+           justify-content: left;
+       }
+       img{
+           
+       }
     }
 </style>

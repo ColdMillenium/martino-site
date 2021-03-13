@@ -1,21 +1,9 @@
 <template>
-    <div>
+    <div class="menu-container">
         <div class="banner-background">
-            
+            <div class="section-title">MENU</div>
         </div>
         <div class="filters">
-           
-            
-            <!-- <a class="filter-btn" href="#create-pizza">Create your own Pizza</a>
-            <a class="filter-btn" href="#wings">Wings</a>
-            <a class="filter-btn" href="#pasta">Pasta</a>
-            <a class="filter-btn" href="#vegetables">vegetables</a>
-            <a class="filter-btn" href="#noodles">noodles</a>
-            <a class="filter-btn" href="#verm">vermecelli</a>
-            <a class="filter-btn" href="#shrimp">shrimp</a>
-            <a class="filter-btn" href="#chicken">chicken</a>
-            <a class="filter-btn" href="#beef">beef</a>
-            <a class="filter-btn" href="#fried-rice">fried rice</a> -->
            <a 
            v-for="(foodGroup ) in foodGroups" 
            v-on:click="section = foodGroup.sectionKey"
@@ -365,7 +353,7 @@
             </div>
         </section>
         <section v-else-if="section=='CP'" id="create-pizza">
-            <div class="section-title">Create your own Pizza</div>
+            <div class="section-title">~ Create your own Pizza ~</div>
             <div class="create-pizza-container">
                 <div class="create-pizza">
                     <div class="pizza-pricing">
@@ -447,7 +435,7 @@
             </div>
         </section>
         <section v-else-if="section=='W'" id="wings">
-            <div class="section-title">Wings</div>
+            <div class="section-title">~ Wings ~</div>
             <div class="wings-container">
                 <div class="wings">
                     <div class="wings-pics">
@@ -472,7 +460,7 @@
             </div>
         </section>
         <section v-else-if="section=='P'" id="pasta">
-            <div class="section-title">Pasta</div>
+            <div class="section-title">~ Pasta~ </div>
             <div class="foodlist">
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
@@ -551,7 +539,7 @@
             
         </section>
         <section v-else-if="section=='Vg'" id="vegetables">
-            <div class="section-title">Vegetables</div>
+            <div class="section-title">~ Vegetables ~</div>
             <div class="foodlist">
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
@@ -637,7 +625,7 @@
             </div>
         </section>
         <section  v-else-if="section=='N'" id="noodles">
-            <div class="section-title">Noodles</div>
+            <div class="section-title">~ Noodles ~</div>
             <div class="foodlist">
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
@@ -713,7 +701,7 @@
 
         </section>
         <section v-else-if="section=='Vm'" id="verm">
-            <div class="section-title">Vermecelli</div>
+            <div class="section-title">~ Vermicelli ~</div>
             <div class="foodlist">
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
@@ -738,7 +726,7 @@
             </div>
         </section>
         <section v-else-if="section=='S'" id="shrimp">
-            <div class="section-title">Shrimp</div>
+            <div class="section-title">~ Shrimp ~</div>
             <div class="foodlist">
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
@@ -799,7 +787,7 @@
             </div>
         </section>
         <section v-else-if="section=='C'"  id="chicken">
-            <div class="section-title">Chicken</div>
+            <div class="section-title">~ Chicken ~</div>
             <div class="foodlist">
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
@@ -924,7 +912,7 @@
             </div>
         </section>
         <section v-else-if="section==='B'" id="beef">
-            <div class="section-title">Beef</div>
+            <div class="section-title">~ Beef ~</div>
             <div class="foodlist">
             <FoodItem
                 picUrl="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?webp=true&quality=90&resize=620%2C563"
@@ -1017,7 +1005,7 @@
             </div>
         </section>
         <section v-else-if="section=='FR'"  id="fried-rice">
-            <div class="section-title">Fried Rice</div>
+            <div class="section-title">~ Fried Rice ~</div>
             <div class="foodlist">
                 
             
@@ -1353,7 +1341,9 @@
     }
 </script>
 <style scoped>
-   
+   .menu-container{
+       width: 100%;
+   }
     .banner{
         width: 100vw;
         min-height: 150px;
@@ -1363,6 +1353,15 @@
         background-size: cover;
         width: 100vw;
         height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .banner-background *{
+        padding: 0;
+        margin: 0;
+        color: white;
+        filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.5));
     }
     .filters{
         position: sticky;
@@ -1400,11 +1399,11 @@
     .filter-btn.active{
         background: var(--highlight);
         color: white;
-        font-weight: bold;
+    
     }
     section{
  
-     padding-top: 100px; 
+     /* padding-top: 100px;  */
      width: 100%;
        
     }
@@ -1421,12 +1420,22 @@
         
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(600px, 1fr) ) ;
-        gap: 50px;
         max-width: 1300px; 
-        margin:auto;
+      
+        justify-content: center;
         justify-items: center;
+        width: 100vw;
+        margin: 0 auto 20px auto;
+        padding: 0;
         /* align-items: center; */
     }
+    @media  (max-width: 640px) {
+        .foodlist{
+            justify-items: stretch;
+        }
+      
+    }
+    
     /* .fade-in {
         
         opacity: 0;
@@ -1436,10 +1445,10 @@
     /* ---------- Specialty Pizza---------- */
         .pizza-guide-container{
             background: white;
-            width: 100%;
+            width: 100vw;
         }
         .pizza-guide{
-            width: 1300px;;
+            max-width: 1300px;;
             background: rgb(255, 255, 255);
             /* background: url(../assets/img/specialPizza/Buffalo.jpg); */
             
@@ -1449,21 +1458,27 @@
             text-align: left;
             padding: 3em;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: space-between;
             align-items: center; 
             box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
             margin-bottom: 50px;
            
         }
+        @media  (max-width: 647px) {
+
+        }
         .pizza-guide-leaf{
-            height: 50px;
+            height: 20px;
         }
         .leaf-legend{
             display: flex;
             align-items: center;
             gap: 7px;
             font-size: 32px;
+        }
+        .leaf-legend p{
+            font-size: 16px;
         }
         .pizza-options{
             display: flex;
@@ -1618,6 +1633,13 @@
                 text-align: center;
                 margin: 0 auto;
                 font-weight: 600;
+            }
+
+             @media  (max-width: 640px) {
+                .toppings-list{
+                    flex-direction: column;
+                }
+            
             }
             
 

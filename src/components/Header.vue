@@ -44,7 +44,7 @@
         </router-link>
       </div>
 
-      <div v-on:click="toggleSideBar()">>
+      <div v-on:click="toggleSideBar()">
         <router-link  style="text-decoration: none;" to="/AboutUs" >
             <div class="sideBar-item"
             >
@@ -142,7 +142,7 @@ export default {
   display:flex;
   
   align-items: center;
-  gap: 5em;
+  gap: 2em;
   font-size: 1.25em;
   font-weight: bold;
  

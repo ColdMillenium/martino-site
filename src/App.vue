@@ -84,6 +84,10 @@ body, h1, h2, h3{
   overflow-x: hidden;
   color: #2c3e50;
   min-height: 100%;
+
+}
+body{
+    max-width: 100vw;
 }
 *{
   box-sizing: border-box;

@@ -23,7 +23,7 @@ export default {
                 textDecoration: 'none',
                 color: 'white',
                 height: "100%",
-                padding: "1em"
+                padding: "0.2em"
             },
         }
     },

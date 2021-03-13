@@ -131,9 +131,13 @@
             </div>
             <div class="delivery order-now-section">
               <div class="title">Delivery <i class="fas fa-car  order-now-icon"></i></div>
+              
+              Click here to order Delivery!
               <a href="https://www.ubereats.com/toronto/food-delivery/martino-pizza-%2526-asian-fusion-kitchen/daMPWIR7QbaQLUImKv9LIw">
                 <img class="uber-eats-logo" src="../assets/img/uberEatsLogo.png" alt="">
+                
               </a>
+              
               
               <!-- <div class="desc"><strong>11:30am - 8:00pm</strong></div> -->
             </div>
@@ -300,9 +304,7 @@ section{
     transition: transform 0.3s ease-in;
 
   }
-  .special-item img:hover{
-    transform: scale(1.1);
-  }
+ 
   .special-item .text-area{
     position: absolute;
     bottom:0;
@@ -566,7 +568,7 @@ span{
 }
 .order-now-section .title{
   font-size: 24px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
 }
 .address .link{
