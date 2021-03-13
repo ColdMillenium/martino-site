@@ -2,6 +2,11 @@
   <div class="pw-container">
         <img class="wing-img" src="../../assets/img/Wings/wingsTransparent.png" alt="">
         <div class="pw-ui">
+             <div class="desc">
+                <div class="pw-subtitle">  {{size}} Combo</div>
+                <p class="chicken">3 topping pizza AND {{chicken}} LB Chicken Wings!</p>
+                <p class="price">${{price}}</p>
+            </div>
             <div class="pw-options">
                 <div  
                     v-for="(option, index) in options" 
@@ -12,11 +17,7 @@
                     {{option.size}}
                 </div>
             </div>
-            <div class="desc">
-                <div class="pw-subtitle">  {{size}} Combo</div>
-                <p class="chicken">3 topping pizza AND {{chicken}} LB Chicken Wings!</p>
-                <p class="price">${{price}}</p>
-            </div>
+           
             
             
             
@@ -97,10 +98,12 @@ export default {
         text-align: center;
         color: white;
         font-weight: bold;
+        
     }
     .wing-img{
         height: 300px;
     }
+
     .pw-ui{
         display:flex;
         flex-direction: column;
@@ -150,7 +153,18 @@ export default {
     }
     .price{
         font-size: 64px;
-        
-        
+
+    }
+    @media  screen and (max-width: 1000px) {
+        .pw-container{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+            gap: 0px;
+        }
+        .wing-img{
+            height: 200px;
+        }
     }
 </style>
