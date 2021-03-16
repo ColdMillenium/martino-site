@@ -70,12 +70,13 @@ section{
 }
 p{
   font-family: 'Roboto';
+  font-size: 1.6rem;
 }
 h1{
 
 }
 h2{
- 
+  font-size: 2.4rem;
 }
 body, h1, h2, h3{
   margin: 0;
@@ -88,12 +89,15 @@ body, h1, h2, h3{
 }
 body{
     max-width: 100vw;
+    min-width: 47.8rem;
+   
 }
 *{
   box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
+   font-size: 62.5%;
 }
 
 .menu-btn{
@@ -104,9 +108,9 @@ html {
       
         /* background-color: var(--highlight); */
         color: var(--black);
-        padding: 1em;
-        width: 100px;
-        border-radius: 3px;
+        padding: 1rem;
+        width: 10rem;
+        border-radius: 0.3rem;
         cursor: pointer;
         border: 3px solid var(--highlight);
         box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;

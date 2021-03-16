@@ -248,10 +248,10 @@ section{
 }
 
 .welcome-btn{
-  margin: 20px;
-  font-size: 24px;
+  margin: 2.0rem;
+  font-size: 2.4rem;
   font-weight: 600;
-  border-radius: 3px;
+  border-radius: 0.3rem;
 
 }
 /* ------------- Specials -------------*/
@@ -265,7 +265,7 @@ section{
   }
   .special-item{
     position: relative;
-    width: 300px;
+    width: 30rem;
     height: contain-content;
     background: white;
     overflow: hidden;
@@ -279,10 +279,10 @@ section{
   
   .special-item .price{
     position: absolute;
-    bottom: 115px;
-    padding: 15px;
+    bottom: 12.0rem;
+    padding: 1.5rem;
     right: 0;
-    font-size: 48px;
+    font-size: 4.8rem;
     color: white;
     font-weight: 600;
     filter: drop-shadow(4px 2px 3px rgba(0, 0, 0, 0.7));
@@ -290,9 +290,13 @@ section{
   .special-item .price.medium::before{
     content: "Medium size for";
     display: block;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: 600;
     text-align: right;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    padding-right: 1.5rem;
   }
   
   .special-item img{
@@ -311,7 +315,7 @@ section{
     left: 0;
     right: 0;
     background: white;
-    padding: 10px;
+    padding: 1.0rem;
     margin: 0;
   }
   .special-item .text-area h2{
@@ -321,7 +325,7 @@ section{
   }
   .special-item .text-area .desc{
     color: green;
-    margin: 10px auto;
+    margin: 1rem auto;
     width: 80%;
   }
   .fa-thumbs-up{
@@ -329,11 +333,11 @@ section{
     color: white;
     top: 0;
     right: 0;
-    margin: 15px;
+    margin: 1.5rem;
     font-size: 20px;
     z-index: 500;
     background: var(--highlight);
-    padding: 15px;
+    padding: 1.5rem;
     border-radius: 100%;
     filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.5));
     
@@ -345,7 +349,7 @@ section{
 .classic-combo .section-container{
    background: url(./../assets/img/ClassicPizzaBackground.png);
    background-size: cover;
-   border-radius: 3px;
+   border-radius: 0.3rem;
    color: white;
    /* background: url(./../assets/img/vintage3.jpg); */
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
@@ -366,35 +370,24 @@ section{
   width: 100%;
   justify-content: space-evenly;
 }
-.classic-left ,
-.classic-right{
-  border-radius: 5px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px ;
-  padding-bottom: 2.5rem;
-  overflow: hidden;
 
-}
-.classic-left{
-  flex-direction: column;
-  gap: 20px;
-  
-}
+
 .classic-pizza,
 .classic-pasta,
 .classic-asian{
-  height: 150px;
-  width: 150px;
+  height: 15rem;
+  width: 15rem;
   
   /* border: 4px solid var(--highlight); */
   /* filter: drop-shadow(7px 7px 7px rgba(0, 0, 0, 0.178)); */
 }
 .classic-pizza{
-  height: 200px;
-  width: 300px;
+  height: 20rem;
+  width: 30rem;
 }
 
 .classic-plus{
-  font-size: 50px;
+  font-size: 5rem;
   color:  var(--black);
 
 }
@@ -414,29 +407,29 @@ section{
 
 .classic-combo-desc{
   font-weight: 600;
-  font-size: 24px;
-  margin:5px auto;
+  font-size: 2.4rem;
+  margin:0.5rem auto;
   text-align: center;
   background: rgba(0, 0, 0, 0.637);
-  border-radius: 3px;
+  border-radius: 0.3rem;
   width: fit-content;
-  padding: 20px;
+  padding: 2rem;
   font-family: 'Roboto';
 }
 .classic-combo-desc div{
-  margin: 20px;
+  margin: 2rem;
 }
 
 
 .desc1, .desc3{
   font-weight: 600;
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 .desc2{
   font-weight: 300;
 }
 .desc3{
-  font-size: 40px;
+  font-size: 4rem;
 }
 span{
   color: var(--highlight);
@@ -446,32 +439,27 @@ span{
 
 .classic-combo-prices,
 .classic-combo-price{
-  margin: 30px 0 0 0;
+  margin: 3rem 0 0 0;
   display: flex;
   justify-content: space-evenly
 }
 .classic-combo-price{
   flex-direction: column;
-  
-  /* border: 3px solid var(--highlight); */
-  padding: 0.5em 1.5em;
-  border-radius: 5px;
-     filter: drop-shadow(4px 2px 3px rgba(0, 0, 0, 0.7));
-
+  filter: drop-shadow(4px 2px 3px rgba(0, 0, 0, 0.7));
 }
 .classic-price{
   font-weight: 600;
-  font-size: 36px;
+  font-size: 3.6rem;
 }
-@media  screen and (max-width: 1000px) {
+@media  screen and (max-width: 100rem) {
  .classic-combo-prices{
    justify-content: center;
  }
  .classic-combo-price{
-   padding: 1em;
+   padding: 1rem;
  }
 }
-@media  screen and (max-width: 640px) {
+@media  screen and (max-width: 64rem) {
  .classic-combo-prices{
    flex-wrap: wrap;
  }
@@ -486,11 +474,8 @@ span{
 
 /* ------------- PIZZA & WING COMBOS -------------*/
 .pizza-wing-combos{
- padding: 20px;
- /* background: url(../assets/img/woodTable.jpg); */
- /* background: var(--black); */
+ padding: 2rem;
  color: var(--black);
- background-size: cover;
 }
 .pizza-wing-combos
 .section-title{
@@ -514,7 +499,7 @@ span{
 .order-content{
   display: flex;
   justify-content: space-between;
-  height: 500px;;
+  height: 50rem;
   padding: 0;
 }
 .order-content-left{
@@ -526,11 +511,11 @@ span{
   
   width: 50%;
   text-align: left;
-  gap: 20px;
+  gap: 2rem;
  
 }
 .order-content-left p{
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 .order-content-left *{
   margin-left: 0;
@@ -538,15 +523,15 @@ span{
 
 }
 .order-info{
-  width: 500px;
+  width: 50rem;
 
   text-align: left;
-  margin-right: 30px;
+  margin-right: 3rem;
   width: 80%;
-  padding: 20px;
+  padding: 2.0rem;
   border: 3px solid var(--highlight);
-  border-radius: 3px;
-  margin-bottom: 20px
+  border-radius: 0.3rem;
+  margin-bottom: 2rem;
 
 }
 .order-content-left .section-title{
@@ -567,7 +552,7 @@ span{
   align-items: center;
 }
 .order-now-section .title{
-  font-size: 24px;
+  font-size: 2.4rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
@@ -576,18 +561,18 @@ span{
   
 }
 .uber-eats-logo{
-  height: 100px;
+  height: 10rem;
   display: inline block ;
-  border: 3px solid #5fb709;
-  border-radius: 3px;
-  padding: 0 30px;
+  border: 0.3rem solid #5fb709;
+  border-radius: 0.3rem;
+  padding: 0 3rem;
   cursor: pointer;
 }
 .order-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid: 30px;
-  height: 400px;
+  grid: 3rem;
+  height: 40rem;
   padding: 0;
   margin: 0;
   width: 100%
@@ -595,11 +580,11 @@ span{
 .fa-running{
 
   color: black;
-  font-size: 300px;
+  font-size: 30rem;
   font-weight: bold;
-  height: 500px;
+  height: 50rem;
 }
-@media  screen and (max-width: 676px) {
+@media  screen and (max-width: 67.6rem) {
   .order-content{
     flex-direction: column;
     justify-content: center;

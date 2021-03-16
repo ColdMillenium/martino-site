@@ -1346,13 +1346,13 @@
    }
     .banner{
         width: 100vw;
-        min-height: 150px;
+        min-height: 15rem;
     }
     .banner-background{
         background: url(../assets/img/specialPizza/Primavera.jpg);
         background-size: cover;
         width: 100vw;
-        height: 200px;
+        height: 20rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1366,24 +1366,24 @@
     .filters{
         position: sticky;
         z-index: 999;
-        top: 60px;
+        top: 6rem;
         background-color: rgba(231, 231, 231, 0.349);
-        padding:10px;
+        padding:1rem;
         display: flex;
         flex-wrap: wrap;
         align-content: center;
         justify-content: center;
-        gap: 10px;
+        gap: 1rem;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
         
 
     }
     .filter-btn{
         position: static;
-        padding: 5px 10px;
+        padding: 0.5rem 1rem;
         background:white;
         text-decoration: none;
-        border: 2.2px solid var(--highlight);
+        border: 0.2rem solid var(--highlight);
         border-radius: 1em;
         
         color:var(--highlight);
@@ -1408,8 +1408,8 @@
        
     }
     .section-title{
-        font-size: 48px;
-        margin-bottom: 25px;
+        font-size: 4.8rem;
+        margin-bottom: 2.5rem;
         font-weight: 600;
         text-shadow: 0px 4px 3px rgba(75, 75, 75, 0.4),
                0px 8px 13px rgba(97, 97, 97, 0.1),
@@ -1419,20 +1419,21 @@
     .foodlist{
         
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr) ) ;
-        max-width: 1300px; 
+        grid-template-columns: repeat(auto-fill, minmax(64rem, 1fr) ) ;
+        max-width: 130rem; 
       
         justify-content: center;
         justify-items: center;
         width: 100vw;
-        margin: 0 auto 20px auto;
+        margin: 0 auto 2rem auto;
         padding: 0;
+        gap: 1rem;
         /* align-items: center; */
     }
-    @media  (max-width: 640px) {
-        .foodlist{
+    @media  (max-width: 64rem) {
+        /* .foodlist{
             justify-items: stretch;
-        }
+        } */
       
     }
     
@@ -1448,7 +1449,7 @@
             width: 100vw;
         }
         .pizza-guide{
-            max-width: 1300px;;
+            max-width: 130rem;;
             background: rgb(255, 255, 255);
             /* background: url(../assets/img/specialPizza/Buffalo.jpg); */
             
@@ -1462,43 +1463,43 @@
             justify-content: space-between;
             align-items: center; 
             box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-            margin-bottom: 50px;
+            margin-bottom: 5rem;
            
         }
-        @media  (max-width: 647px) {
+        @media  (max-width: 64.7rem) {
 
         }
         .pizza-guide-leaf{
-            height: 20px;
+            height: 2rem;
         }
         .leaf-legend{
             display: flex;
             align-items: center;
-            gap: 7px;
-            font-size: 32px;
+            gap: 0.7rem;
+            font-size: 3.2rem;
         }
         .leaf-legend p{
-            font-size: 16px;
+            font-size: 1.6rem;
         }
         .pizza-options{
             display: flex;
             flex-direction: row;
-            gap: 100px;
+            gap: 10rem;
         }
         .pizza-sizes{
             display: grid;
             grid-template-columns: 1fr 1fr ;
-            gap: 5px;
+            gap: 0.5rem;
           
             
         }
         .pizza-size-desc{
             display: flex;
             flex-direction: column;
-            font-size: 20px;
+            font-size: 2rem;
         }
         .size{
-            font-size: 32px;
+            font-size: 3.2rem;
         }
     
         
@@ -1508,10 +1509,10 @@
     /* ---------- Wings---------- */
         .wings{
             display: grid;
-            width: 1000;
+            width: 100rem;
             grid-template-columns: 1fr 1fr 1fr;
             align-items: center;
-            max-width: 1300px;
+            max-width: 130rem;
             margin: auto;
         }
         .wings-pic{
@@ -1519,7 +1520,7 @@
         }
         .wings-subtitle{
             font-family: 'Roboto';
-            font-size: 32px;
+            font-size: 3.2rem;
             font-weight: 600;
         }
         .sauce{
@@ -1529,16 +1530,16 @@
         .wings-sizes{
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 2rem;
         }
         .wings-lbs{
             font-weight: bold;
         }
         .wings-info{
-            font-size: 14px;
+            font-size: 1.4rem;
         }
         .wings-price{
-            font-size: 18px;
+            font-size: 1.8rem;
             font-weight: 300;
         }
 
@@ -1550,7 +1551,7 @@
         }
         .create-pizza .subtitle{
                 text-align: left;
-                font-size: 32px;
+                font-size: 3.2rem;
                 font-weight: 600;
             }
         .create-pizza-size{
@@ -1558,26 +1559,26 @@
 
         }
         .create-pizza-inches{
-            font-size: 16px;
+            font-size: 1.6rem;
             font-weight: 300;
         }
         .create-pizza-slices{
-            font-size: 16px;
+            font-size: 1.6rem;
             font-weight: 300;
         }
         .pizza-pricing{
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            gap: 50px;
+            gap: 5rem;
             align-items: center;
             justify-content: center;
-            max-width: 1300px;
+            max-width: 130rem;
             margin: auto;
             
         }
         .extra-price{
             font-weight: 300;
-            font-size: 18px;
+            font-size: 1.8rem;
         }
         .pizza-option{
             display: flex;
@@ -1586,28 +1587,28 @@
         
         /* ------ Calzone ------ */
             .calzone{
-                margin: 30px auto;
+                margin: 3rem auto;
                 display: flex;
                 
                 
                 box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-                width: 600px;
-                border-radius: 5px;
+                width: 60rem;
+                border-radius: 0.5rem;
                 overflow: hidden;
             }
             .calzone-pic{
                 width: 40%;
             }
             .calzone-info{
-                padding: 10px;
+                padding: 1rem;
                 width: 60%;
             }
             .calzone-title{
                 font-weight: 600;
-                font-size: 36px;
+                font-size: 3.6rem;
             }
             .calzone-price{
-                font-size: 30px;
+                font-size: 3rem;
                 font-weight: 300;
             }
         /*------- Toppings ------ */
@@ -1617,25 +1618,25 @@
             .toppings-list{
                 display: flex;
                 justify-content: center;
-                max-width: 1300px;
+                max-width: 130rem;
                 margin: auto;
-                gap: 100px;
-                margin-top: 30px;
+                gap: 10rem;
+                margin-top: 3rem;
             }
             .toppings-subtitle{
-                font-size: 24px;
+                font-size: 2.4rem;
                 font-weight: 400;
                 font-family: 'Roboto';
 
             }
             .toppings-title{
-                font-size: 32px;
+                font-size: 3.2rem;
                 text-align: center;
                 margin: 0 auto;
                 font-weight: 600;
             }
 
-             @media  (max-width: 640px) {
+             @media  (max-width: 64rem) {
                 .toppings-list{
                     flex-direction: column;
                 }

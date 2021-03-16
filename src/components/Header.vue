@@ -126,12 +126,13 @@ export default {
   display:flex;
   align-items: center;
   gap: 2em;
+  font-size: 1.6rem;
 
 }
 .logo{
  
-  height: 40px;
-   margin: 12px;
+  height: 4rem;
+   margin: 1.2rem;
   
 }
 
@@ -143,7 +144,7 @@ export default {
   
   align-items: center;
   gap: 2em;
-  font-size: 1.25em;
+  font-size: 2rem;
   font-weight: bold;
  
   height: 100%;
@@ -158,7 +159,7 @@ export default {
   background-color: blue;
 }
 
-@media (max-width: 899px) { 
+@media (max-width: 89rem) { 
   .text{
     display:none;
   }
@@ -172,8 +173,8 @@ export default {
     cursor: pointer;
     padding: 0;
     position: relative;
-    height: 40px;
-    width: 40px;
+    height: 4rem;
+    width: 4rem;
     color: black;
 }
 
@@ -183,22 +184,22 @@ export default {
 
 .icon .line{
     background-color: rgb(233, 53, 53);
-    height: 3px;
-    width: 20px;
+    height: 0.3rem;
+    width: 2rem;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 1rem;
+    left: 1rem;
     font-weight: bold;
     transition: opacity 0.6s linear ,transform 0.6s linear;
 }
 .icon .line2{
     top:auto;
-    bottom: 18.5px;
+    bottom: 1.85rem;
     opacity: 1;
 }
 .icon .line3{
     top:auto;
-    bottom: 10px;
+    bottom: 1rem;
     
 }
 
@@ -209,16 +210,16 @@ button{
 }
 
 button.active .line1{
-  transform: rotate(-405deg) translateY(6px) translateX(-6px);
+  transform: rotate(-405deg) translateY(0.6rem) translateX(-0.6rem);
 }
 button.active .line2{
   opacity: 0;
 }
 button.active .line3{
-  transform: rotate(405deg) translateY(-6px) translateX(-6px);
+  transform: rotate(405deg) translateY(-0.6rem) translateX(-0.6rem);
 }
 
-@media (max-width: 899px) { 
+@media (max-width: 89.9rem) { 
   button{
     display:inline-block;
   }
@@ -238,20 +239,20 @@ button.active .line3{
   grid-template-columns: 1fr;
   justify-items: center;
   align-items: center;
-  grid-gap: 1px;
-  padding: 100px;
+  grid-gap: 0.1rem;
+  padding: 10rem;
   transform: translateX(150vw);
 }
 .sideBar-item{
   color: #2c3e50;
-  font-size: 68px;
+  font-size: 6.8rem;
   font-weight: 600;
   white-space: nowrap;
 }
 .sideBarActive{
     transform: translateX(0vw);
   }
-@media (min-width: 899px) { 
+@media (min-width: 89.9rem) { 
   .sideBarActive{
     transform: translateX(150vw);
   }
